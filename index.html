@@ -1,0 +1,366 @@
+<title>Alba Cove Trading</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Alba Cove Trading FZCO is an international trading and business development company headquartered in Dubai.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a trading-desk ledger. Wide hero with a schematic route chart centred on Dubai, then ruled rows (label left, detail right) for each division. */
+:root{
+  --bg:#EDF1F0;
+  --surface:#E2E9E8;
+  --fg:#0E2327;
+  --muted:#4A6266;
+  --line:#BFCDCC;
+  --accent:#9C5F0F;
+  --accent-ink:#FFFFFF;
+  --f-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1A1D;--surface:#112428;--fg:#E5EEEC;--muted:#97B0B1;--line:#25403F;--accent:#E3A950;--accent-ink:#0A1A1D;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1A1D;--surface:#112428;--fg:#E5EEEC;--muted:#97B0B1;--line:#25403F;--accent:#E3A950;--accent-ink:#0A1A1D;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font:400 16px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0;
+}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;font-weight:600;letter-spacing:-.015em;line-height:1.08}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+p{margin:0}
+
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:20px;border-bottom:1px solid var(--line)}
+.brand{font:700 15px/1 var(--f-display);letter-spacing:.22em;text-transform:uppercase;text-decoration:none}
+.brand span{color:var(--accent)}
+nav{display:flex;gap:6px 22px;flex-wrap:wrap}
+nav a{font-size:14px;text-decoration:none;color:var(--muted);padding:4px 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--fg);border-color:var(--accent)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:64px 56px}
+.hero h1{font-size:clamp(38px,6vw,68px);margin-top:18px}
+.hero p.lead{margin-top:22px;max-width:46ch;color:var(--muted);font-size:18px}
+.cta{display:inline-block;margin-top:30px;background:var(--accent);color:var(--accent-ink);padding:13px 22px;text-decoration:none;font-weight:500;font-size:15px;border-radius:2px}
+.cta:hover{filter:brightness(1.08)}
+.hero-meta{margin-top:34px;display:flex;gap:10px 26px;flex-wrap:wrap;font:400 12px/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chart{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px}
+.chart svg{display:block;width:100%;height:auto}
+.chart .cap{font:400 11px/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:8px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.route{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:4 5;animation:flow 14s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-180}}
+.grid-line{stroke:var(--line);stroke-width:1}
+.node{fill:var(--bg);stroke:var(--fg);stroke-width:1.5}
+.hub{fill:var(--accent)}
+.lbl{font:500 11px var(--f-mono);fill:var(--fg);letter-spacing:.08em}
+.lbl-sub{font:400 9.5px var(--f-mono);fill:var(--muted);letter-spacing:.06em}
+@media (prefers-reduced-motion:reduce){.route{animation:none}html{scroll-behavior:auto}}
+
+/* sections */
+section{border-top:1px solid var(--line);padding-block:64px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:24px 56px}
+section>.head{min-width:0}
+section>.head h2{font-size:clamp(28px,3.6vw,42px);margin-top:14px}
+section>.head p{margin-top:16px;color:var(--muted);max-width:36ch}
+.body{min-width:0}
+.body>p{max-width:62ch}
+.body>p+p{margin-top:16px}
+
+.ledger{margin:0;padding:0;list-style:none}
+.ledger li{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:8px 24px;padding-block:20px;border-top:1px solid var(--line)}
+.ledger li:first-child{border-top:0;padding-top:0}
+.ledger h3{font-size:19px;line-height:1.25}
+.ledger p{color:var(--muted);max-width:60ch}
+.ledger .tags{margin-top:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font:400 12.5px/1 var(--f-mono);padding:7px 9px;border:1px solid var(--line);border-radius:2px;background:var(--surface)}
+
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;border:1px solid var(--line);margin-top:28px}
+.pillars div{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.pillars h3{font-size:17px;margin-bottom:8px}
+.pillars p{font-size:14.5px;color:var(--muted)}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:28px}
+.cols h3{font-size:17px;margin-bottom:8px}
+.cols p{color:var(--muted);font-size:15px}
+
+.values{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.values span{font:500 13px/1 var(--f-display);padding:10px 14px;border:1px solid var(--fg);border-radius:999px}
+
+.note{margin-top:24px;padding:16px 18px;background:var(--surface);border-left:3px solid var(--accent);font-size:14.5px;color:var(--muted);max-width:64ch}
+
+.contact-list{margin:0;display:grid;gap:22px}
+.contact-list dt{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.contact-list dd{margin:0;font-size:18px;overflow-wrap:anywhere}
+.copy{margin-left:10px;font:500 12px var(--f-mono);background:none;color:var(--fg);border:1px solid var(--line);padding:5px 9px;border-radius:2px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+.legal{margin-top:32px;font-size:13px;color:var(--muted);max-width:68ch}
+
+footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;font:400 12px/1.5 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:minmax(0,1fr);padding-block:40px}
+  section{grid-template-columns:minmax(0,1fr);padding-block:48px}
+  .ledger li{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top">Alba <span>Cove</span> Trading</a>
+    <nav aria-label="Main">
+      <a href="#company">Company</a>
+      <a href="#trading">Trading</a>
+      <a href="#investments">Investments</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#network">Network</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Global commodity trading</div>
+        <h1>A considered route through global commodities.</h1>
+        <p class="lead">Alba Cove Trading connects trusted origin partners with global demand, balancing disciplined sourcing, logistics and market intelligence.</p>
+        <a class="cta" href="#contact">Discuss an opportunity</a>
+        <div class="hero-meta"><span>Energy · Metals · Agriculture</span><span>Dubai · International</span></div>
+      </div>
+      <div class="chart">
+        <svg viewBox="0 0 560 380" role="img" aria-label="Schematic of trade routes from Dubai to the Gulf, Asia, Europe, Africa and the Americas">
+          <g>
+            <line class="grid-line" x1="0" y1="95" x2="560" y2="95"/>
+            <line class="grid-line" x1="0" y1="190" x2="560" y2="190"/>
+            <line class="grid-line" x1="0" y1="285" x2="560" y2="285"/>
+            <line class="grid-line" x1="140" y1="0" x2="140" y2="380"/>
+            <line class="grid-line" x1="280" y1="0" x2="280" y2="380"/>
+            <line class="grid-line" x1="420" y1="0" x2="420" y2="380"/>
+          </g>
+          <path class="route" d="M280 190 C240 120 160 90 90 70"/>
+          <path class="route" d="M280 190 C220 250 160 280 110 310"/>
+          <path class="route" d="M280 190 C220 190 130 180 50 180"/>
+          <path class="route" d="M280 190 C340 130 420 100 490 80"/>
+          <path class="route" d="M280 190 C340 240 410 270 480 300"/>
+          <path class="route" d="M280 190 C300 170 320 165 345 160"/>
+          <g>
+            <circle class="node" cx="90" cy="70" r="5"/>
+            <text class="lbl" x="90" y="52" text-anchor="middle">EUROPE</text>
+            <circle class="node" cx="110" cy="310" r="5"/>
+            <text class="lbl" x="110" y="334" text-anchor="middle">AFRICA</text>
+            <circle class="node" cx="50" cy="180" r="5"/>
+            <text class="lbl" x="50" y="204" text-anchor="middle">AMERICAS</text>
+            <circle class="node" cx="490" cy="80" r="5"/>
+            <text class="lbl" x="490" y="62" text-anchor="middle">ASIA</text>
+            <circle class="node" cx="480" cy="300" r="5"/>
+            <text class="lbl" x="480" y="324" text-anchor="middle">SOUTH ASIA</text>
+            <circle class="node" cx="345" cy="160" r="4"/>
+            <text class="lbl" x="355" y="150">GULF</text>
+            <circle class="hub" cx="280" cy="190" r="9"/>
+            <circle cx="280" cy="190" r="17" fill="none" stroke="var(--accent)" stroke-width="1"/>
+            <text class="lbl" x="280" y="222" text-anchor="middle">DUBAI</text>
+            <text class="lbl-sub" x="280" y="236" text-anchor="middle">TRADING DESK</text>
+          </g>
+        </svg>
+        <div class="cap"><span>Fig. 1 · Schematic, not to scale</span><span>Hub: Dubai, UAE</span></div>
+      </div>
+    </div>
+
+    <section id="company">
+      <div class="head">
+        <div class="eyebrow">About Alba Cove</div>
+        <h2>A global platform for trade, investment and business development.</h2>
+      </div>
+      <div class="body">
+        <p>Alba Cove Trading FZCO is an international trading and business development company headquartered in Dubai, United Arab Emirates. Our integrated model combines commodity trading, strategic investments, business development and project coordination across international markets.</p>
+        <p>Founded to connect businesses, investors and commercial opportunities across multiple industries, Alba Cove serves as a strategic business platform rather than a traditional trading company. We bring together commercial expertise, professional coordination and access to international markets to create sustainable value through trusted relationships.</p>
+        <div class="values" aria-label="Our identity">
+          <span>International Vision</span><span>Local UAE Presence</span><span>Strategic Thinking</span><span>Commercial Excellence</span><span>Long-Term Relationships</span><span>Professional Integrity</span>
+        </div>
+        <div class="pillars" style="margin-top:36px">
+          <div><h3>Global Trading</h3><p>Energy products, industrial commodities, precious metals and agricultural commodities.</p></div>
+          <div><h3>Strategic Investments</h3><p>Real estate, private investments, joint ventures and infrastructure projects.</p></div>
+          <div><h3>Corporate Solutions</h3><p>Company formation, structuring, licensing and operational support.</p></div>
+          <div><h3>Trade &amp; Financial Coordination</h3><p>Trade finance, banking coordination, structured finance and investment support.</p></div>
+          <div><h3>Business Development</h3><p>International expansion, market entry, strategic partnerships and project development.</p></div>
+        </div>
+        <p style="margin-top:14px;font:400 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Alba Cove Business Ecosystem™</p>
+      </div>
+    </section>
+
+    <section id="trading">
+      <div class="head">
+        <div class="eyebrow">Global Trading Division</div>
+        <h2>International trading without borders.</h2>
+        <p>Through an established network of producers, exporters, manufacturers and commercial partners, we facilitate the sourcing and trading of strategic commodities with transparency, operational efficiency and long-term cooperation.</p>
+      </div>
+      <div class="body">
+        <p style="margin-bottom:28px">Trading activities cover energy products, petroleum derivatives, industrial commodities, precious metals, agricultural commodities, industrial raw materials and government supply projects across the Middle East, Africa, Europe, Asia and Latin America.</p>
+        <ul class="ledger">
+          <li>
+            <h3>Energy</h3>
+            <div>
+              <p>Strategic energy solutions. Our commercial approach covers supplier identification, commercial negotiation, contract coordination, logistics coordination, documentation management and transaction support.</p>
+              <div class="tags">
+                <span>EN590 Diesel</span><span>Jet Fuel A1</span><span>Virgin Fuel Oil</span><span>D6 Fuel Oil</span><span>Mazut</span><span>Marine Fuel</span><span>Base Oil</span><span>Bitumen</span><span>LNG</span><span>LPG</span><span>Gasoline</span><span>Lubricants</span><span>Petroleum Coke</span><span>Sulphur</span><span>Industrial Fuels</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <h3>Metals</h3>
+            <div>
+              <p>Responsible precious metals trading, guided by responsible sourcing, commercial transparency, professional due diligence, international compliance and long-term partnerships.</p>
+              <div class="tags"><span>Gold</span><span>Silver</span><span>Platinum</span><span>Palladium</span><span>Copper</span><span>Copper Cathodes</span><span>Copper Powder</span><span>Industrial Metals</span></div>
+            </div>
+          </li>
+          <li>
+            <h3>Agriculture</h3>
+            <div>
+              <p>Supporting global food supply chains across Africa, the Middle East, Europe and Asia.</p>
+              <div class="tags"><span>Coffee</span><span>Cocoa</span><span>Rice</span><span>Sugar</span><span>Sesame</span><span>Cashew Nuts</span><span>Corn</span><span>Wheat</span><span>Edible Oils</span><span>Animal Feed</span><span>Fertilizers</span><span>Urea</span></div>
+            </div>
+          </li>
+          <li>
+            <h3>Sourcing &amp; procurement</h3>
+            <p>Supplier identification, international vendor selection, commercial negotiation support, RFQ coordination, contract coordination, documentation management, supplier due diligence and quality inspection coordination for energy, oil &amp; gas, mining, manufacturing, construction, agriculture, infrastructure and government supply projects.</p>
+          </li>
+          <li>
+            <h3>Logistics</h3>
+            <div>
+              <p>Ocean freight, container shipping, bulk cargo, project cargo, tanker coordination, port operations, warehousing, customs coordination, cargo documentation and international transportation. Commercial terms as agreed:</p>
+              <div class="tags"><span>FOB</span><span>CIF</span><span>CFR</span><span>DAP</span><span>EXW</span><span>FCA</span><span>Other Incoterms®</span></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="investments">
+      <div class="head">
+        <div class="eyebrow">Strategic Investment Division</div>
+        <h2>Creating long-term investment value.</h2>
+        <p>We coordinate selected investment initiatives for private investors, corporations and institutional clients through a disciplined approach to opportunity identification, partner coordination and project development.</p>
+      </div>
+      <div class="body">
+        <h3 style="font-size:22px">A single gateway to international opportunities.</h3>
+        <p style="margin-top:12px">Through our network we coordinate investment opportunities, corporate expansion, strategic partnerships, joint ventures, market entry strategies, real estate projects, procurement, trade finance coordination and project development.</p>
+        <div class="eyebrow" style="margin-top:32px">Investment areas</div>
+        <div class="tags" style="margin-top:12px"><span>Real Estate</span><span>Energy Projects</span><span>Infrastructure</span><span>Industrial Development</span><span>Hospitality</span><span>Technology</span><span>Healthcare</span><span>Manufacturing</span><span>Agriculture</span><span>International Joint Ventures</span></div>
+        <div class="cols">
+          <div>
+            <h3>A strategic hub for global investors</h3>
+            <p>The UAE offers a strategic global location, world-class infrastructure, an international business environment, a modern regulatory framework and access to regional and global markets. Key sectors include real estate, renewable and traditional energy, logistics, manufacturing, hospitality, healthcare, technology, AI, financial services, food security and infrastructure.</p>
+          </div>
+          <div>
+            <h3>Real estate investment</h3>
+            <p>We coordinate access to selected residential, commercial, hospitality, industrial, mixed-use, off-plan and income-producing property opportunities through reputable developers, licensed real estate professionals and specialized advisors. Services include investment assessment, project selection, developer coordination, negotiation support, documentation coordination and post-investment assistance through qualified partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="head">
+        <div class="eyebrow">Corporate Solutions</div>
+        <h2>Strategic guidance for sustainable growth.</h2>
+        <p>We coordinate corporate advisory, business establishment, trade finance and institutional processes through experienced qualified partners, helping clients manage complex international projects with clarity.</p>
+      </div>
+      <div class="body">
+        <ul class="ledger">
+          <li><h3>Corporate advisory</h3><p>Structuring, expansion, market entry, joint ventures, strategic alliances, reorganization, investment planning, project structuring and growth strategies.</p></li>
+          <li><h3>Business setup</h3><p>Company formation, free zone and mainland companies, licensing, operational coordination, documentation and post-incorporation support through licensed professional partners.</p></li>
+          <li>
+            <h3>Trade finance coordination</h3>
+            <div>
+              <p>Letters of Credit, Standby Letters of Credit, Bank Guarantees, documentary collections, trade finance, supply chain finance, structured finance and project finance are coordinated with qualified banking institutions and licensed partners.</p>
+              <p style="margin-top:10px;font-size:14px">Alba Cove is not a bank, financial institution or regulated financial intermediary and does not issue financial instruments.</p>
+            </div>
+          </li>
+          <li><h3>Residency &amp; investor solutions</h3><p>Investor residency, Golden Visa, executive relocation, family sponsorship, administrative documentation, renewals and business relocation support are coordinated through qualified service providers in accordance with applicable regulations.</p></li>
+          <li><h3>Compliance, governance &amp; risk</h3><p>Alba Cove promotes corporate governance, KYC, AML awareness, due diligence, risk assessment, confidentiality, data protection, ethical business conduct and international best practices across every coordinated project.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="network">
+      <div class="head">
+        <div class="eyebrow">Global network</div>
+        <h2>Connecting businesses across international markets.</h2>
+      </div>
+      <div class="body">
+        <p>Our international network of commercial partners, professional advisors, logistics providers, developers and institutional contacts enables Alba Cove to coordinate opportunities across industries and jurisdictions.</p>
+        <p>The network includes trading companies, energy suppliers, refineries, mining companies, commodity producers, logistics operators, shipping companies, real estate developers, financial institutions through licensed partners, law firms, tax advisors, audit firms, government authorities and free zones.</p>
+        <div class="eyebrow" style="margin-top:32px">Geographic presence</div>
+        <div class="tags" style="margin-top:12px"><span>Middle East</span><span>Europe</span><span>Africa</span><span>Asia</span><span>North America</span><span>Latin America</span></div>
+        <div class="cols">
+          <div>
+            <h3>Why organizations choose Alba Cove</h3>
+            <p>Strategic international perspective, UAE market expertise, an integrated business platform, a trusted professional network, tailored solutions, long-term relationships and high professional standards.</p>
+          </div>
+          <div>
+            <h3>Client journey</h3>
+            <p>From understanding objectives and strategic assessment, through business structuring and professional coordination, to execution and long-term partnership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="head">
+        <div class="eyebrow">Contact</div>
+        <h2>Let’s build your next international opportunity.</h2>
+        <p>Whether your objective is international trade, strategic investment, corporate expansion or business development, Alba Cove provides professional coordination, international expertise and trusted partnerships for sustainable growth.</p>
+      </div>
+      <div class="body">
+        <dl class="contact-list">
+          <div>
+            <dt>Head office</dt>
+            <dd>Building A1<br>Dubai Digital Park<br>Dubai Silicon Oasis<br>Dubai, United Arab Emirates</dd>
+          </div>
+          <div>
+            <dt>Telephone</dt>
+            <dd><span id="tel">+971 58 550 93545</span><button class="copy" type="button" data-copy="tel" id="copy-tel">Copy</button></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@albacovetrading.com" id="mail">info@albacovetrading.com</a><button class="copy" type="button" data-copy="mail" id="copy-mail">Copy</button></dd>
+          </div>
+        </dl>
+        <p class="legal"><strong>Important information.</strong> This corporate profile is for informational and presentation purposes only. It does not constitute an offer, solicitation, investment recommendation, legal opinion or financial advice. Regulated legal, tax, financial, banking, audit and regulatory services are provided exclusively by appropriately licensed and qualified independent professionals or authorized institutions where required. All services are subject to applicable laws, contractual agreements and regulatory requirements.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Alba Cove Trading FZCO</span>
+    <span>Dubai · Global commodity markets</span>
+  </footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.dataset.copy);
+    var text=el.textContent.trim();
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1600)};
+    var fallback=function(){
+      var r=document.createRange();r.selectNodeContents(el);
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+      btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy'},1600);
+    };
+    try{
+      navigator.clipboard.writeText(text).then(done,fallback);
+    }catch(e){fallback()}
+  });
+});
+</script>
