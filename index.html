@@ -97,6 +97,12 @@ section>.head p{margin-top:16px;color:var(--muted);max-width:36ch}
 .values{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .values span{font:500 13px/1 var(--f-display);padding:10px 14px;border:1px solid var(--fg);border-radius:999px}
 
+.spec{margin:0 0 12px;display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:6px 20px;font-size:14.5px}
+.spec dt{font:500 11.5px/1.7 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.spec dd{margin:0;overflow-wrap:anywhere}
+.uses{font-size:14.5px;color:var(--muted);max-width:60ch}
+.uses b{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg);font-weight:500;margin-right:6px}
+@media (max-width:520px){.spec{grid-template-columns:minmax(0,1fr);gap:0}.spec dd{margin-bottom:8px}}
 .note{margin-top:24px;padding:16px 18px;background:var(--surface);border-left:3px solid var(--accent);font-size:14.5px;color:var(--muted);max-width:64ch}
 
 .contact-list{margin:0;display:grid;gap:22px}
@@ -121,6 +127,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;jus
     <nav aria-label="Main">
       <a href="#company">Company</a>
       <a href="#trading">Trading</a>
+      <a href="#products">Products</a>
       <a href="#investments">Investments</a>
       <a href="#solutions">Solutions</a>
       <a href="#network">Network</a>
@@ -242,6 +249,126 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;jus
             </div>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="head">
+        <div class="eyebrow">Metals &amp; materials</div>
+        <h2>High-purity metals and isotopes.</h2>
+        <p>A selection of ultrapure metals, powders and stable isotopes available for industrial and research use. Specifications and availability are confirmed on request.</p>
+      </div>
+      <div class="body">
+        <ul class="ledger">
+          <li>
+            <h3>Ultrafine Copper Powder</h3>
+            <div>
+              <dl class="spec">
+                <dt>Natural isotope</dt><dd>Cu-63 69.9%, Cu-65 30.91%</dd>
+                <dt>Purity</dt><dd>At least 99.999% (100% minus total impurities)</dd>
+                <dt>Availability</dt><dd>1,000 – 20,000 kg per month</dd>
+                <dt>Packaging</dt><dd>PET ampoules of 2 kg, 30 kg per box</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Aviation and machine-building, powder metallurgy, electronics, chemical industry, agriculture and animal husbandry, screen printing.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Copper Ingots</h3>
+            <div>
+              <dl class="spec">
+                <dt>Purity</dt><dd>At least 99.9999%, natural isotopes Cu-63 and Cu-65</dd>
+                <dt>Availability</dt><dd>Up to 20,000 kg per month</dd>
+                <dt>Packaging</dt><dd>1 kg ingots in plastic boxes of 25–30 kg</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Microelectronics, chemical catalysts, mechanical engineering, nuclear industry, defence industry.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Copper Plates</h3>
+            <div>
+              <dl class="spec">
+                <dt>Purity</dt><dd>At least 99.9999%; not less than 99.9993% on a metal basis</dd>
+                <dt>Availability</dt><dd>Up to 20,000 kg per month</dd>
+                <dt>Packaging</dt><dd>0.25 kg plates, vacuum packed in 2–2.5 kg lots, in plastic boxes of 25–30 kg</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Ultrathin wires and tapes, micro and nano electronics including radiation-resistant devices, nanophotonics, copper mirrors for research lasers, low-temperature applications, chemistry.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Nickel Wire</h3>
+            <div>
+              <dl class="spec">
+                <dt>Size</dt><dd>0.025 micron</dd>
+                <dt>Purity</dt><dd>At least 99.6%</dd>
+                <dt>Availability</dt><dd>Up to 200 kg per month</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Vacuum equipment, electronic tubes, resistors and resistance thermometers, fiber optic and electronic connectors, superconductors, batteries, semiconductor manufacturing, vacuum deposition, chemical production, surgical wire, methane reforming.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Aluminium Ingots</h3>
+            <div>
+              <dl class="spec">
+                <dt>Purity</dt><dd>Not less than 99.9995 – 99.9999% for the specified impurities</dd>
+                <dt>Availability</dt><dd>7,000 kg per month</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Zone-melted ultrapure aluminium for the synthesis of III-V semiconductor compounds used in semiconductor devices.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Ultrafine Zinc Powder</h3>
+            <div>
+              <dl class="spec">
+                <dt>Natural isotope</dt><dd>Zn-64 48.89%, Zn-66 27.81%</dd>
+                <dt>Purity</dt><dd>At least 99.998%</dd>
+                <dt>Packaging</dt><dd>PET ampoules of 2.5 kg, 50 kg per box</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Anticorrosive paints and primers, thermodiffusion and plasma galvanizing, chemical current sources, hydro electrometallurgy and gold mining, organic synthesis, pharmaceutical and pesticide intermediates, pyrotechnics, tyres, powder metallurgy, hydrogen energy.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Technical Gold Alloy / Tungsten</h3>
+            <div>
+              <dl class="spec">
+                <dt>Composition</dt><dd>Gold at least 83%, tungsten at least 17%</dd>
+                <dt>Availability</dt><dd>Up to 150,000 g per month</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Substrate of high-frequency transistors for civil aviation and defence equipment.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Caesium Metal (<sup>133</sup>Cs)</h3>
+            <div>
+              <dl class="spec">
+                <dt>Purity</dt><dd>99.9%</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Power generation (MHD generators) and ion engines for space applications.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Stable Isotope Tungsten-184</h3>
+            <div>
+              <dl class="spec">
+                <dt>Chemical purity</dt><dd>99.99%</dd>
+                <dt>Isotopic purity</dt><dd>95%</dd>
+                <dt>Availability</dt><dd>5,000 g per month</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Nuclear power engineering, converter reactors, surface physics and chemistry research.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Stable Isotope Osmium-187</h3>
+            <div>
+              <dl class="spec">
+                <dt>Chemical purity</dt><dd>At least 99.9%</dd>
+                <dt>Isotopic purity</dt><dd>At least 99.4%</dd>
+                <dt>Availability</dt><dd>500 g per month</dd>
+              </dl>
+              <p class="uses"><b>Uses</b>Isotope tagging to protect banknotes, bank cards and special documents, gamma laser research, catalysts, hard wear-resistant alloys for measuring instruments, nuclear and space industries.</p>
+            </div>
+          </li>
+        </ul>
+        <p class="note">Delivery by road and by air to the recipient’s warehouse on CIP (Carriage and Insurance Paid to) terms, buyer’s customs area. Commercial terms are discussed on availability and confirmation of funds for the purchase. Contact us for specifications and quantities.</p>
       </div>
     </section>
 
