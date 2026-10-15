@@ -1,27 +1,36 @@
 # Alba Cove Trading – sito web
 
-Sito aziendale di **Alba Cove Trading FZCO** (Dubai), pagina unica statica in HTML/CSS/JS, senza build e senza dipendenze da installare.
+Sito aziendale di **Alba Cove Trading FZCO** (Dubai): una pagina statica in HTML/CSS/JS, senza build e senza dipendenze da installare.
 
 ## Contenuto del progetto
 
 | File | Funzione |
 | --- | --- |
-| `index.html` | Il sito completo (Company, Trading, Investments, Solutions, Network, Contact) |
-| `CNAME` | Dominio personalizzato per GitHub Pages (`www.albacovetrading.com`) |
-| `.nojekyll` | Disattiva Jekyll, il sito viene servito così com'è |
+| `index.html` | Il sito completo: Company, Trading, Products, Investments, Solutions, Network, Contact |
+| `assets/logo-mark.png` | Simbolo (cerchio con la A), verde, sfondo trasparente |
+| `assets/logo-full-teal.png` | Logo completo, verde, sfondo trasparente |
+| `assets/logo-full-white.png` | Logo completo, bianco, per sfondi scuri (footer) |
+| `.nojekyll` | Disattiva Jekyll: il sito viene servito così com'è |
 
-## Pubblicazione su GitHub Pages
+## Sito online (GitHub Pages)
 
-1. Crea un repository (es. `albacovetrading-website`) e carica questi file nel ramo `main`.
-2. Vai in **Settings → Pages**, scegli **Deploy from a branch**, ramo `main`, cartella `/ (root)`.
-3. Nel DNS del dominio `albacovetrading.com` imposta:
-   - un record **CNAME** `www` che punta a `<tuo-utente-github>.github.io`
-   - per il dominio senza `www` (apex), quattro record **A** verso gli IP di GitHub Pages indicati nella documentazione ufficiale (docs.github.com, sezione "Managing a custom domain for your GitHub Pages site")
-4. In **Settings → Pages** attiva **Enforce HTTPS** quando il certificato è pronto.
+Indirizzo di prova: https://zianky.github.io/Albacovetrading/
 
-Finché il DNS punta al vecchio sito (Framer), il sito attuale resta online: cambia i record solo quando sei pronto al passaggio.
+In **Settings → Pages**: sorgente "Deploy from a branch", ramo `main`, cartella `/ (root)`.
+
+## Foto
+
+Le foto sono ancora collegate dall'indirizzo del vecchio sito (`framerusercontent.com`). Per renderle definitive, salvale in `assets/photos/` e sostituisci gli indirizzi nelle etichette `<img>` di `index.html`. Se il vecchio sito viene disattivato, le foto collegate smettono di caricarsi.
+
+## Collegare il dominio www.albacovetrading.com
+
+1. Aggiungi nella radice del repository un file `CNAME` che contenga una sola riga: `www.albacovetrading.com`.
+2. Nel DNS del dominio crea un record **CNAME** `www` che punta a `zianky.github.io`.
+3. In **Settings → Pages** inserisci il dominio in "Custom domain" e attiva **Enforce HTTPS** quando il certificato è pronto.
+
+Finché il DNS punta al vecchio sito, il dominio continua a mostrare quello.
 
 ## Modifiche
 
-Tutti i testi sono in `index.html`. I colori e i font sono definiti all'inizio del file, nel blocco `:root`.
-Il numero di telefono nella sezione Contact è copiato dal sito precedente: verificalo prima della pubblicazione.
+Testi, colori e font sono in `index.html`; colori e font sono definiti all'inizio del file, nel blocco `:root`.
+Prima di pubblicare in modo definitivo, controlla il numero di telefono nella sezione Contact (copiato dal sito precedente) e la misura del filo di nichel in Products.
