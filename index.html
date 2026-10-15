@@ -5,46 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alba Cove Trading</title>
 <meta name="description" content="Alba Cove Trading FZCO connects global commodity markets through disciplined sourcing, logistics and long-term partnerships. Headquartered in Dubai.">
-<meta name="theme-color" content="#0D2B2D">
+<meta name="theme-color" content="#FBFDFC">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Alba Cove Trading">
 <meta property="og:description" content="Global commodity trading, strategic investments and corporate solutions from Dubai.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%233A7173'/%3E%3Ctext x='16' y='24.5' font-family='Arial,sans-serif' font-weight='800' font-size='24' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&family=Marcellus&display=swap">
 <style>
-/* Layout: a dark masthead with a very large, left-aligned headline, then plain reading sections split into a heading column and a content column.
-   The one memorable element is the periodic-table tile set: every product is an element, and selecting a tile opens its specification. */
+/* Layout: a light, airy masthead taken from the logo (white ground, teal, fine serif, brush circle and waves), large left-aligned headline,
+   then plain reading sections split into a heading column and a content column.
+   The memorable element is the periodic-table tile set: every product is an element, and selecting a tile opens its specification. */
 :root{
-  --bg:#F3F6F5;
-  --surface:#E1EAE8;
-  --fg:#10292B;
-  --muted:#4F6668;
-  --line:#C5D3D1;
-  --brand:#3A7173;
+  --bg:#FBFDFC;
+  --surface:#EAF2F1;
+  --surface-2:#D9E7E6;
+  --fg:#1B3638;
+  --muted:#4F696B;
+  --line:#CFE0DF;
+  --brand:#3F7B7F;
+  --logo:#4C868C;
   --on-brand:#FFFFFF;
-  --band:#0D2B2D;
-  --band-fg:#EAF2F0;
-  --band-muted:#9DB8B8;
-  --band-line:rgba(234,242,240,.22);
-  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --f-text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --band:#1B4547;
+  --band-fg:#F2F8F7;
+  --band-muted:#A9C6C6;
+  --band-line:rgba(242,248,247,.25);
+  --f-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-text:"Jost","Helvetica Neue",Arial,sans-serif;
+  --f-brand:"Marcellus","Cormorant Garamond",Georgia,serif;
   --gutter:clamp(20px,4vw,48px);
   color-scheme:light;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#0A1819;--surface:#12292B;--fg:#E4EEEC;--muted:#94AEAE;--line:#25403F;
-    --brand:#6FB0B1;--on-brand:#0A1819;
-    --band:#102F31;--band-fg:#EAF2F0;--band-muted:#9DB8B8;--band-line:rgba(234,242,240,.22);
-    color-scheme:dark;
-  }
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:16px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.65 var(--f-text);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.7 var(--f-text);-webkit-font-smoothing:antialiased}
 .wrap{width:min(1180px,100% - var(--gutter)*2);margin-inline:auto}
 p{margin:0}
 a{color:inherit}
@@ -53,47 +49,52 @@ a{color:inherit}
 .skip{position:absolute;left:-999px;top:8px;background:var(--bg);color:var(--fg);padding:8px 12px;z-index:10}
 .skip:focus{left:8px}
 
-h1,h2,h3,h4{font-family:var(--f-display);margin:0;text-wrap:balance}
-h2{font-weight:700;font-stretch:108%;font-size:clamp(1.9rem,3.6vw,2.85rem);line-height:1.06;letter-spacing:-.02em}
-h3{font-weight:600;font-size:1.15rem;line-height:1.3;letter-spacing:-.005em}
-h4{font-weight:600;font-size:1rem;line-height:1.3}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+h1,h2,h3{font-family:var(--f-display);font-weight:500}
+h2{font-size:clamp(2.1rem,4vw,3.3rem);line-height:1.04;letter-spacing:-.01em}
+h3{font-weight:600;font-size:1.4rem;line-height:1.2}
+h4{font:500 1rem/1.3 var(--f-text)}
 
 /* masthead */
-.band{background:var(--band);color:var(--band-fg)}
-.top{display:flex;justify-content:space-between;align-items:center;gap:14px 32px;flex-wrap:wrap;padding-block:22px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 1.05rem/1 var(--f-display);font-stretch:112%;letter-spacing:.01em}
-.logo i{display:grid;place-items:center;width:34px;height:34px;background:var(--brand);color:var(--on-brand);font:800 1.3rem/1 var(--f-display);font-style:normal;border-radius:2px}
+.hero{background:var(--bg)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px 32px;flex-wrap:wrap;padding-block:20px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--fg)}
+.logo img{display:block;width:44px;height:auto}
+.logo span{font:400 1.02rem/1 var(--f-brand);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
 nav{display:flex;flex-wrap:wrap;gap:6px 26px}
-nav a{font:500 .95rem/1.4 var(--f-display);color:var(--band-muted);text-decoration:none;padding-block:4px}
-nav a:hover{color:var(--band-fg);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+nav a{font:400 .97rem/1.4 var(--f-text);color:var(--muted);text-decoration:none;padding-block:4px}
+nav a:hover{color:var(--fg);text-decoration:underline;text-decoration-color:var(--logo);text-underline-offset:7px;text-decoration-thickness:1px}
 
 .hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:44px clamp(32px,5vw,80px);align-items:end;padding-block:clamp(36px,6vw,88px) clamp(40px,5vw,72px)}
 .hero-grid>*{min-width:0}
-h1{font-weight:800;font-stretch:112%;font-size:clamp(2.45rem,5.6vw,4.6rem);line-height:1;letter-spacing:-.025em}
-.lead{margin-top:clamp(22px,3vw,34px);max-width:40ch;font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;color:var(--band-muted)}
+h1{font-size:clamp(2.8rem,6.2vw,5.3rem);line-height:1;letter-spacing:-.015em;color:var(--fg)}
+.lead{margin-top:clamp(22px,3vw,34px);max-width:40ch;font-size:clamp(1.1rem,1.6vw,1.25rem);line-height:1.6;color:var(--muted);font-weight:300}
 .actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
-.btn{display:inline-block;background:var(--band-fg);color:var(--band);padding:14px 24px;border-radius:2px;font:600 1rem/1 var(--f-display);text-decoration:none}
-.btn:hover{background:#fff}
-.link{font:500 1rem/1.3 var(--f-display);color:var(--band-fg);text-underline-offset:6px;text-decoration-thickness:1px}
+.btn{display:inline-block;background:var(--brand);color:var(--on-brand);padding:15px 26px;border-radius:2px;font:500 1rem/1 var(--f-text);letter-spacing:.02em;text-decoration:none}
+.btn:hover{background:#316669}
+.link{font:400 1rem/1.3 var(--f-text);color:var(--fg);text-underline-offset:7px;text-decoration-thickness:1px;text-decoration-color:var(--logo)}
 
-.strip-head{font:500 .95rem/1.4 var(--f-display);color:var(--band-muted)}
+.strip-head{font:400 .95rem/1.4 var(--f-text);color:var(--muted)}
 .strip{margin-top:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.strip .el{aspect-ratio:1/1.08;background:transparent;border:1px solid var(--band-line);color:var(--band-fg);padding:9px 10px;animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards}
+.strip .el{aspect-ratio:1/1.08;background:var(--surface);color:var(--fg);padding:9px 11px;animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards;transition:background-color .15s,color .15s}
 .strip .el:nth-child(2){animation-delay:.05s}.strip .el:nth-child(3){animation-delay:.1s}.strip .el:nth-child(4){animation-delay:.15s}
 .strip .el:nth-child(5){animation-delay:.2s}.strip .el:nth-child(6){animation-delay:.25s}.strip .el:nth-child(7){animation-delay:.3s}.strip .el:nth-child(8){animation-delay:.35s}
-.strip .el:hover{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.strip .el:hover{background:var(--brand);color:var(--on-brand)}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}}
 
+/* wave motif from the logo */
+.waves{height:34px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='34' viewBox='0 0 160 34'%3E%3Cpath d='M0 12 C26 2 54 2 80 12 S134 22 160 12' fill='none' stroke='%234C868C' stroke-width='1.5'/%3E%3Cpath d='M0 22 C26 12 54 12 80 22 S134 32 160 22' fill='none' stroke='%234C868C' stroke-width='1' opacity='.55'/%3E%3C/svg%3E") repeat-x center/160px 34px}
+
 /* element tiles */
-.el{display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font-family:var(--f-display);border:0;border-radius:2px;min-width:0}
-.el .z{font-weight:500;font-size:.8rem;line-height:1;opacity:.75}
-.el .sym{font-weight:800;font-stretch:112%;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1;letter-spacing:-.02em}
-.el sup{font-size:.4em;font-weight:600;vertical-align:1.2em;line-height:0;margin-right:.1em;letter-spacing:0}
+.el{display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font-family:var(--f-text);border:0;border-radius:2px;min-width:0}
+.el .z{font-weight:400;font-size:.8rem;line-height:1;opacity:.8}
+.el .sym{font-family:var(--f-display);font-weight:600;font-size:clamp(1.9rem,3vw,2.7rem);line-height:1}
+.el sup{font-family:var(--f-text);font-size:.38em;font-weight:500;vertical-align:1.5em;line-height:0;margin-right:.12em}
 .tiles .el{background:var(--surface);color:var(--fg);padding:14px 14px 12px;aspect-ratio:1/1.05;transition:background-color .15s,color .15s}
-.tiles .el .sym{font-size:clamp(1.9rem,3.8vw,3.1rem)}
-.tiles .el .nm{display:block;font-weight:600;font-size:.95rem;line-height:1.2}
-.tiles .el .ms{display:block;font-weight:400;font-size:.78rem;line-height:1.3;opacity:.75;margin-top:2px}
-.tiles .el:hover{background:var(--line)}
+.tiles .el .sym{font-size:clamp(2.4rem,4.6vw,3.9rem)}
+.tiles .el .nm{display:block;font-weight:500;font-size:.95rem;line-height:1.2}
+.tiles .el .ms{display:block;font-weight:300;font-size:.8rem;line-height:1.3;margin-top:2px}
+.tiles .el:hover{background:var(--surface-2)}
 .tiles .el[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
 .tiles{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
 
@@ -103,88 +104,91 @@ section{padding-block:clamp(56px,9vw,112px)}
 .split>div{min-width:0}
 .sub{margin-top:18px;max-width:34ch;color:var(--muted)}
 .stack>*+*{margin-top:1.1em}
-.big{font-size:clamp(1.3rem,2.2vw,1.65rem);line-height:1.4;color:var(--fg);max-width:34ch}
+.big{font:500 clamp(1.6rem,2.7vw,2.15rem)/1.22 var(--f-display);color:var(--fg);max-width:30ch}
 .muted{color:var(--muted)}
 
 .rows{border-bottom:1px solid var(--line)}
 .row{display:grid;grid-template-columns:minmax(0,11.5rem) minmax(0,1fr);gap:6px 32px;padding-block:22px;border-top:1px solid var(--line)}
-.rows>.row:first-child{border-top:2px solid var(--fg)}
+.rows>.row:first-child{border-top:1px solid var(--logo)}
 .row>div{min-width:0}
 .row p{color:var(--muted)}
 .row p+p{margin-top:.7em}
-.row .items{font:500 .98rem/1.7 var(--f-display);color:var(--fg);margin-top:.9em}
+.row .items{font:400 1rem/1.7 var(--f-text);color:var(--fg);margin-top:.9em}
 
 .alt{background:var(--surface)}
-.alt .tiles .el{background:var(--bg)}
-.alt .tiles .el:hover{background:var(--line)}
-.alt .tiles .el[aria-pressed="true"]{background:var(--brand)}
 .lede{max-width:56ch;color:var(--muted);margin-top:18px}
 
 /* product panel */
-.panel{margin-top:28px;padding-top:28px;border-top:2px solid var(--fg);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px clamp(32px,6vw,96px)}
+.panel{margin-top:28px;padding-top:28px;border-top:1px solid var(--logo);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px clamp(32px,6vw,96px)}
 .panel>div{min-width:0}
 .panel:not([hidden]){animation:fade .2s ease-out}
 @keyframes fade{from{opacity:0}}
-.panel h3{font-weight:800;font-stretch:112%;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.05;letter-spacing:-.02em}
+.panel h3{font-weight:500;font-size:clamp(2.1rem,3.6vw,3rem);line-height:1.02;letter-spacing:-.01em}
 .panel .aside{margin-top:10px;color:var(--muted);max-width:26ch}
+.panel .aside sup{font-size:.7em;vertical-align:.4em;line-height:0}
 .form+.form{margin-top:36px}
 .form h4{margin-bottom:10px}
 .spec{margin:0;display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr)}
 .spec dt,.spec dd{padding-block:9px;border-top:1px solid var(--line)}
-.spec dt{font:500 .92rem/1.55 var(--f-display);color:var(--muted)}
+.spec dt{font:400 .92rem/1.6 var(--f-text);color:var(--muted)}
 .spec dd{margin:0;font-size:1rem;overflow-wrap:anywhere}
 .uses{margin-top:12px;max-width:62ch}
-.uses b{font:600 .92rem var(--f-display);margin-right:.5em}
+.uses b{font-weight:500;margin-right:.5em}
 .terms{margin-top:36px;max-width:70ch;color:var(--muted);font-size:1rem}
 
 /* journey */
 .journey{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 28px;counter-reset:j}
-.journey li{counter-increment:j;border-top:2px solid var(--fg);padding-top:12px;font:600 1.02rem/1.35 var(--f-display)}
-.journey li::before{content:counter(j);display:block;font:800 1.9rem/1 var(--f-display);font-stretch:112%;color:var(--brand);margin-bottom:10px}
+.journey li{counter-increment:j;border-top:1px solid var(--logo);padding-top:12px;font:500 1.02rem/1.35 var(--f-text)}
+.journey li::before{content:counter(j);display:block;font:500 2.5rem/1 var(--f-display);color:var(--brand);margin-bottom:8px}
 
 /* contact */
+.band{background:var(--band);color:var(--band-fg)}
 .contact{padding-block:clamp(56px,9vw,112px)}
-.contact h2{font-size:clamp(2rem,5vw,4rem);max-width:18ch;font-stretch:112%}
+.contact h2{font-size:clamp(2.4rem,5.4vw,4.4rem);max-width:18ch;line-height:1}
 .contact .intro{margin-top:20px;max-width:52ch;color:var(--band-muted)}
-.mail{display:inline-block;margin-top:clamp(28px,4vw,44px);font:700 clamp(1.35rem,3.6vw,2.5rem)/1.2 var(--f-display);font-stretch:108%;letter-spacing:-.015em;overflow-wrap:anywhere;text-underline-offset:8px;text-decoration-thickness:2px}
+.mail{display:inline-block;margin-top:clamp(28px,4vw,44px);font:600 clamp(1.6rem,4vw,2.9rem)/1.2 var(--f-display);overflow-wrap:anywhere;text-underline-offset:8px;text-decoration-thickness:1px}
 .details{margin:clamp(28px,4vw,44px) 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px 40px}
-.details dt{font:500 .92rem/1.4 var(--f-display);color:var(--band-muted);margin-bottom:6px}
+.details dt{font:400 .92rem/1.4 var(--f-text);color:var(--band-muted);margin-bottom:6px}
 .details dd{margin:0;font-size:1.1rem;line-height:1.5}
-.copy{margin-left:10px;font:500 .85rem/1 var(--f-display);background:none;color:var(--band-fg);border:1px solid var(--band-line);padding:6px 10px;border-radius:2px;cursor:pointer}
+.copy{margin-left:10px;font:400 .85rem/1 var(--f-text);background:none;color:var(--band-fg);border:1px solid var(--band-line);padding:6px 10px;border-radius:2px;cursor:pointer}
 .copy:hover{border-color:var(--band-fg)}
 .legal{margin-top:clamp(36px,5vw,64px);padding-top:22px;border-top:1px solid var(--band-line);max-width:78ch;font-size:.9rem;line-height:1.6;color:var(--band-muted)}
-.foot{padding-block:22px 36px;border-top:1px solid var(--band-line);font:400 .9rem/1.5 var(--f-display);color:var(--band-muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.foot{padding-block:40px 36px;border-top:1px solid var(--band-line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px}
+.foot img{display:block;width:min(300px,70%);height:auto}
+.foot p{font:400 .9rem/1.6 var(--f-text);color:var(--band-muted);text-align:right}
 
 @media (max-width:960px){
-  .split,.panel{grid-template-columns:minmax(0,1fr)}
-  .hero-grid{align-items:start}
+  .split,.panel,.hero-grid{grid-template-columns:minmax(0,1fr)}
   .tiles{grid-template-columns:repeat(4,minmax(0,1fr))}
   .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:620px){
+  .logo span{font-size:.82rem;letter-spacing:.14em}
+  .logo img{width:38px}
   .row{grid-template-columns:minmax(0,1fr)}
   .spec{grid-template-columns:minmax(0,1fr)}
   .spec dt{padding-bottom:0;border-top:1px solid var(--line)}
   .spec dd{border-top:0;padding-top:2px}
   .journey{grid-template-columns:minmax(0,1fr)}
   .tiles .el{padding:10px 10px 9px}
-  .tiles .el .nm{font-size:.72rem;overflow-wrap:break-word}
+  .tiles .el .nm{font-size:.74rem;overflow-wrap:break-word}
   .tiles .el .ms{display:none}
+  .foot p{text-align:left}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .strip .el,.panel:not([hidden]){animation:none}
-  .tiles .el{transition:none}
+  .tiles .el,.strip .el{transition:none}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#company">Skip to content</a>
 
-<div class="band hero" id="top">
+<div class="hero" id="top">
   <div class="wrap">
     <header class="top">
-      <a class="logo" href="#top" aria-label="Alba Cove Trading, home"><i aria-hidden="true">A</i>Alba Cove Trading</a>
+      <a class="logo" href="#top" aria-label="Alba Cove Trading, home"><img src="assets/logo-mark.png" alt="" width="290" height="300"><span>Alba Cove Trading</span></a>
       <nav aria-label="Main">
         <a href="#company">Company</a>
         <a href="#trading">Trading</a>
@@ -222,6 +226,7 @@ section{padding-block:clamp(56px,9vw,112px)}
     </div>
   </div>
 </div>
+<div class="waves" aria-hidden="true"></div>
 
 <main>
   <section id="company">
@@ -502,7 +507,7 @@ section{padding-block:clamp(56px,9vw,112px)}
       </dl>
       <p class="legal"><strong>Important information.</strong> This corporate profile is for informational and presentation purposes only. It does not constitute an offer, solicitation, investment recommendation, legal opinion or financial advice. Regulated legal, tax, financial, banking, audit and regulatory services are provided exclusively by appropriately licensed and qualified independent professionals or authorized institutions where required. All services are subject to applicable laws, contractual agreements and regulatory requirements.</p>
     </div>
-    <footer class="foot"><span>Alba Cove Trading FZCO</span><span>Dubai, United Arab Emirates</span></footer>
+    <footer class="foot"><img src="assets/logo-full-white.png" alt="Alba Cove Trading FZCO" width="1100" height="780"><p>Alba Cove Trading FZCO<br>Dubai, United Arab Emirates</p></footer>
   </div>
 </div>
 
