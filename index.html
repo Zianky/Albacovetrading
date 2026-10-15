@@ -157,12 +157,27 @@ section{padding-block:clamp(56px,9vw,112px)}
 .foot img{display:block;width:min(300px,70%);height:auto}
 .foot p{font:400 .9rem/1.6 var(--f-text);color:var(--band-muted);text-align:right}
 
+.photo{margin:0;background:var(--surface);overflow:hidden;border-radius:2px}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.banner{aspect-ratio:21/8}
+.side{margin-top:28px;aspect-ratio:4/3}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:clamp(40px,6vw,64px)}
+.trio figure{margin:0}
+.trio .photo{aspect-ratio:3/2}
+.trio h3{margin-top:12px}
+.trio p{margin-top:4px;color:var(--muted);font-size:1rem;max-width:32ch}
+.contact-photo{aspect-ratio:21/7;margin-top:clamp(40px,6vw,72px)}
+.hero-photo{margin-top:0}
+.waves{margin-top:clamp(28px,4vw,48px)}
 @media (max-width:960px){
   .split,.panel,.hero-grid{grid-template-columns:minmax(0,1fr)}
   .tiles{grid-template-columns:repeat(4,minmax(0,1fr))}
   .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:620px){
+  .banner{aspect-ratio:16/10}
+  .contact-photo{aspect-ratio:16/9}
+  .trio{grid-template-columns:minmax(0,1fr)}
   .logo span{font-size:.82rem;letter-spacing:.14em}
   .logo img{width:38px}
   .row{grid-template-columns:minmax(0,1fr)}
@@ -226,13 +241,15 @@ section{padding-block:clamp(56px,9vw,112px)}
     </div>
   </div>
 </div>
+<div class="wrap"><figure class="photo banner hero-photo"><img src="https://framerusercontent.com/images/4XfnXKWja2yMznQSgw2ZhhAVrQ.jpg?width=1600" alt="Shipping port at dusk" loading="lazy" decoding="async"></figure></div>
 <div class="waves" aria-hidden="true"></div>
 
 <main>
   <section id="company">
     <div class="wrap split">
       <div>
-        <h2>A global platform for trade, investment and business development.</h2>
+        
+        <figure class="photo side"><img src="https://framerusercontent.com/images/ZUy14Ual6l744MNIgHZEwgQRY.jpg?width=900" alt="Dubai business skyline in the United Arab Emirates" loading="lazy" decoding="async"></figure>
       </div>
       <div class="stack">
         <p class="big">Alba Cove Trading FZCO is an international trading and business development company headquartered in Dubai, United Arab Emirates.</p>
@@ -295,6 +312,11 @@ section{padding-block:clamp(56px,9vw,112px)}
           </div>
         </div>
       </div>
+    </div>
+    <div class="wrap trio">
+      <figure><div class="photo"><img src="https://framerusercontent.com/images/CSq8fXAxe36opZwYyNfZiKbudF8.jpg?width=800" alt="Industrial metals supply" loading="lazy" decoding="async"></div><h3>Metals</h3><p>Base and non-ferrous metals sourced with clarity across global supply routes.</p></figure>
+      <figure><div class="photo"><img src="https://framerusercontent.com/images/91CQ2C6bOzNUrcATh8nBZOQ7W8.jpg?width=800" alt="Container port and cranes" loading="lazy" decoding="async"></div><h3>Energy</h3><p>Pragmatic market access for refined and transitional energy commodities.</p></figure>
+      <figure><div class="photo"><img src="https://framerusercontent.com/images/c5UmuxPEq8C9TmycSBFsDeP94fY.jpg?width=800" alt="Ripe wheat field" loading="lazy" decoding="async"></div><h3>Agriculture</h3><p>Agricultural supply lines supported by experience, timing and long-term stewardship.</p></figure>
     </div>
   </section>
 
@@ -439,6 +461,7 @@ section{padding-block:clamp(56px,9vw,112px)}
       <div>
         <h2>Creating long-term investment value.</h2>
         <p class="sub">We coordinate selected investment initiatives for private investors, corporations and institutional clients through a disciplined approach to opportunity identification, partner coordination and project development.</p>
+        <figure class="photo side"><img src="https://framerusercontent.com/images/4odfGT72OVDi60DNADzZprVEbI.jpg?width=900" alt="Dubai skyline at night in the United Arab Emirates" loading="lazy" decoding="async"></figure>
       </div>
       <div class="stack">
         <p class="big">A single gateway to international opportunities.</p>
@@ -457,6 +480,7 @@ section{padding-block:clamp(56px,9vw,112px)}
       <div>
         <h2>Strategic guidance for sustainable growth.</h2>
         <p class="sub">We coordinate corporate advisory, business establishment, trade finance and institutional processes through experienced qualified partners, helping clients manage complex international projects with clarity.</p>
+        <figure class="photo side"><img src="https://framerusercontent.com/images/q7mXTITB0JIr50UADdfvUuFUmqc.jpg?width=900" alt="Modern Dubai architecture in the United Arab Emirates" loading="lazy" decoding="async"></figure>
       </div>
       <div class="rows">
         <div class="row"><h3>Corporate advisory</h3><p>Structuring, expansion, market entry, joint ventures, strategic alliances, reorganization, investment planning, project structuring and growth strategies.</p></div>
@@ -472,7 +496,8 @@ section{padding-block:clamp(56px,9vw,112px)}
     <div class="wrap">
       <div class="split">
         <div>
-          <h2>Connecting businesses across international markets.</h2>
+          
+          <figure class="photo side"><img src="https://framerusercontent.com/images/RIVMJi3t1vxnTk8nz65xfB9BI.jpg?width=900" alt="Desert landscape in the United Arab Emirates" loading="lazy" decoding="async"></figure>
         </div>
         <div class="stack">
           <p class="big">Partners, advisors, logistics providers, developers and institutions in one network.</p>
@@ -499,6 +524,7 @@ section{padding-block:clamp(56px,9vw,112px)}
     <div class="contact">
       <h2>Let’s build your next international opportunity.</h2>
       <p class="intro">Whether your objective is international trade, strategic investment, corporate expansion or business development, Alba Cove provides professional coordination, international expertise and trusted partnerships for sustainable growth.</p>
+      <figure class="photo contact-photo"><img src="https://framerusercontent.com/images/js1QCLplt5kveK6X7PlhhB1YI.jpg?width=1600" alt="Dubai Creek and traditional boats in the United Arab Emirates" loading="lazy" decoding="async"></figure>
       <a class="mail" id="mail" href="mailto:info@albacovetrading.com">info@albacovetrading.com</a>
       <dl class="details">
         <div><dt>Head office</dt><dd>Building A1, Dubai Digital Park<br>Dubai Silicon Oasis, Dubai<br>United Arab Emirates</dd></div>
