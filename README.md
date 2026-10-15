@@ -33,4 +33,4 @@ Finché il DNS punta al vecchio sito, il dominio continua a mostrare quello.
 ## Modifiche
 
 Testi, colori e font sono in `index.html`; colori e font sono definiti all'inizio del file, nel blocco `:root`.
-Prima di pubblicare in modo definitivo, controlla il numero di telefono nella sezione Contact (copiato dal sito precedente) e la misura del filo di nichel in Products.
+Prima di pubblicare in modo definitivo, controlla la misura del filo di nichel in Products.
