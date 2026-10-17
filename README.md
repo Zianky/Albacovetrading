@@ -24,7 +24,7 @@ Le foto sono salvate in `assets/photos/` (JPEG già ritagliati e compressi) e il
 
 | File | Sezione | Autore |
 | --- | --- | --- |
-| `hero-port-dusk.jpg` | Hero, porto al crepuscolo | Maik Winnecke |
+| `hero-port-dusk-poster.jpg` | Hero, immagine iniziale del video (primo fotogramma) | willy one (Pexels) |
 | `company-business-bay.jpg` | Company | Mohamed Reshad |
 | `metals-laboratory.jpg` | Trading, Metals | Trnava University |
 | `energy-refinery.jpg` | Trading, Energy | Maksym Kaharlytskyi |
@@ -36,6 +36,12 @@ Le foto sono salvate in `assets/photos/` (JPEG già ritagliati e compressi) e il
 | `contact-dubai-creek.jpg` | Contact | Hatem Ramadan |
 
 Per cambiare una foto, sostituisci il file mantenendo lo stesso nome e le stesse proporzioni (hero e Products 21:8, Contact 3:1, Company, Investments, Solutions e Network 4:3, Trading 3:2).
+
+## Video dell'hero
+
+`assets/video/hero-port-dusk.mp4` è un loop di 12,5 secondi, senza audio, 1920×732 (proporzioni 21:8), circa 2,4 MB. `hero-port-dusk.webm` (3,2 MB) è la versione di riserva per i browser senza H.264. Parte da solo, in silenzio, e si ferma per chi ha attivato la riduzione del movimento nel dispositivo. Il video originale è di willy one su Pexels (licenza gratuita, citazione non obbligatoria).
+
+Per sostituirlo: tieni gli stessi nomi file, usa H.264 senza audio e sotto i 3 MB, e rigenera anche il file WebM e `assets/photos/hero-port-dusk-poster.jpg` dal primo fotogramma.
 
 ## Collegare il dominio www.albacovetrading.com
 
