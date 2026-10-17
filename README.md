@@ -26,8 +26,8 @@ Le foto sono salvate in `assets/photos/` (JPEG già ritagliati e compressi) e il
 | --- | --- | --- |
 | `hero-port-dusk-poster.jpg` | Hero, immagine iniziale del video (primo fotogramma) | willy one (Pexels) |
 | `company-business-bay.jpg` | Company | Mohamed Reshad |
-| `metals-laboratory.jpg` | Trading, Metals | Trnava University |
-| `energy-refinery.jpg` | Trading, Energy | Maksym Kaharlytskyi |
+| `metals-laboratory.jpg` | Trading, Metals and minerals | Trnava University |
+| `logistics-port.jpg` | Trading, Logistics (ritaglio del fotogramma del video hero) | dal video Pexels |
 | `agriculture-wheat.jpg` | Trading, Agriculture | Edson Rosas |
 | `products-silicon-wafer.jpg` | Products | Laura Ockel |
 | `investments-dubai-skyline.jpg` | Investments | Ahmed Galal |
