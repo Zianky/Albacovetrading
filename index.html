@@ -14,9 +14,6 @@
 <meta property="og:description" content="Dubai-based international trading, strategic investments and business development. Industrial commodities, metals and minerals, agriculture, high-purity metals and isotopes, corporate solutions.">
 <meta property="og:locale" content="en_AE">
 <link rel="icon" type="image/png" href="assets/logo-mark.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&family=Marcellus&display=swap">
 <style>
 /* Layout: a light, airy masthead taken from the logo (white ground, teal, fine serif, brush circle and waves), large left-aligned headline,
    then plain reading sections split into a heading column and a content column.
@@ -35,9 +32,9 @@
   --band-fg:#F2F8F7;
   --band-muted:#A9C6C6;
   --band-line:rgba(242,248,247,.25);
-  --f-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --f-text:"Jost","Helvetica Neue",Arial,sans-serif;
-  --f-brand:"Marcellus","Cormorant Garamond",Georgia,serif;
+  --f-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --f-text:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-brand:"Trajan Pro","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
   --gutter:clamp(20px,4vw,48px);
   color-scheme:light;
 }
@@ -164,6 +161,8 @@ section{padding-block:clamp(56px,9vw,112px)}
 .details dd{margin:0;font-size:1.1rem;line-height:1.5}
 .copy{margin-left:10px;font:400 .85rem/1 var(--f-text);background:none;color:var(--band-fg);border:1px solid var(--band-line);padding:6px 10px;border-radius:2px;cursor:pointer}
 .copy:hover{border-color:var(--band-fg)}
+.legal a{color:inherit}
+.legal+.legal{margin-top:18px;padding-top:0;border-top:0}
 .legal{margin-top:clamp(36px,5vw,64px);padding-top:22px;border-top:1px solid var(--band-line);max-width:78ch;font-size:.9rem;line-height:1.6;color:var(--band-muted)}
 .foot{padding-block:40px 36px;border-top:1px solid var(--band-line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px}
 .foot img{display:block;width:min(300px,70%);height:auto}
@@ -310,7 +309,7 @@ nav a{padding-block:8px}
             <p>Alba Cove Trading FZCO was established to serve as a trusted international partner for corporations, investors, institutions and entrepreneurs seeking sustainable growth through international trade and strategic investments. Every project we undertake is built upon integrity, professionalism, transparency and a commitment to creating sustainable value.</p>
             <p>We believe that the future belongs to organizations capable of connecting global markets with innovative solutions and long-lasting partnerships. We look forward to building that future together.</p>
           </blockquote>
-          <figcaption><strong>Zanchi Davide</strong>Managing Director, Alba Cove Trading FZCO</figcaption>
+          <figcaption><strong>The Management</strong>Alba Cove Trading FZCO</figcaption>
         </figure>
       </div>
     </div>
@@ -533,7 +532,7 @@ nav a{padding-block:8px}
           <p class="big">Partners, advisors, logistics providers, developers and institutions in one network.</p>
           <p>Alba Cove operates through a network of international partners, suppliers, logistics operators and commercial intermediaries, supporting cross-border transactions with operational coordination and compliance procedures.</p>
           <p class="muted">The network includes trading companies, mining companies, commodity producers, logistics operators, shipping companies, real estate developers, financial institutions through licensed partners, law firms, tax advisors, audit firms, government authorities and free zones.</p>
-          <p>We build commercial relationships in the United Arab Emirates and the GCC countries, West Africa, East Africa, Europe, Asia and Russia, and we serve clients, suppliers and partners across the Middle East, Africa, Europe, Asia, North America and Latin America.</p>
+          <p>We build commercial relationships in the United Arab Emirates and the GCC countries, West Africa, East Africa, Europe and Asia, and we serve clients, suppliers and partners across the Middle East, Africa, Europe, Asia, North America and Latin America.</p>
           <div class="rows" style="margin-top:2em">
             <div class="row"><h3>Why Alba Cove</h3><p>A strategic international perspective, UAE market expertise, an integrated business platform, a trusted professional network, tailored solutions, long-term relationships and high professional standards.</p></div>
             <div class="row"><h3>Objectives</h3><p>To expand international trading partnerships, strengthen global supplier networks, develop long-term commodity supply relationships, increase our presence in emerging markets and build sustainable commercial collaborations worldwide.</p></div>
@@ -563,12 +562,14 @@ nav a{padding-block:8px}
       <a class="mail" id="mail" href="mailto:info@albacovetrading.com">info@albacovetrading.com</a>
       <dl class="details">
         <div><dt>Head office</dt><dd>Building A1, Dubai Digital Park<br>Dubai Silicon Oasis, Dubai<br>United Arab Emirates</dd></div>
-        <div><dt>Contact</dt><dd>Zanchi Davide<br>Managing Director</dd></div>
         <div><dt>Telephone</dt><dd><a href="tel:+971563999345" id="tel">+971 56 399 9345</a><button class="copy" type="button" aria-live="polite" data-copy="tel" id="copy-tel">Copy</button></dd></div>
         <div><dt>Email address</dt><dd><button class="copy" type="button" aria-live="polite" data-copy="mail" id="copy-mail" style="margin-left:0">Copy email</button></dd></div>
         <div><dt>License</dt><dd>62515, Dubai Silicon Oasis</dd></div>
       </dl>
       <p class="legal"><strong>Important information.</strong> This corporate profile is for informational and presentation purposes only. It does not constitute an offer, solicitation, investment recommendation, legal opinion or financial advice. Alba Cove Trading FZCO operates as an international trading, business development and project coordination company and is not a licensed bank, regulated financial institution, investment manager, law firm or public authority. Regulated legal, tax, financial, banking, audit and regulatory services are provided exclusively by appropriately licensed and qualified independent professionals or authorized institutions where required. All transactions remain subject to formal agreements, due diligence procedures, compliance verification, applicable laws and mutually accepted contractual terms.</p>
+      <div class="legal" id="privacy">
+        <p><strong>Privacy and cookies.</strong> This website does not use cookies, analytics, advertising or tracking tools, and it does not load fonts, scripts or media from third-party services. It has no forms and does not collect personal data directly. If you contact us by email or telephone, we use the details you provide only to reply to your request and to manage the business relationship that may follow, and we keep them only as long as needed for that purpose or required by law. The data controller is Alba Cove Trading FZCO, Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates, <a href="mailto:info@albacovetrading.com">info@albacovetrading.com</a>. You may ask us at any time to access, correct or delete your data. The site is hosted on GitHub Pages, whose provider may process technical data such as the IP address of visitors in its server logs, under its own privacy statement.</p>
+      </div>
     </div>
     <footer class="foot"><img src="assets/logo-full-white.png" alt="Alba Cove Trading FZCO" width="1100" height="780"><p>Alba Cove Trading FZCO · License 62515<br>Dubai, United Arab Emirates<br>© 2026 Alba Cove Trading FZCO. All rights reserved.</p></footer>
   </div>
