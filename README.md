@@ -20,7 +20,22 @@ In **Settings → Pages**: sorgente "Deploy from a branch", ramo `main`, cartell
 
 ## Foto
 
-Le foto sono ancora collegate dall'indirizzo del vecchio sito (`framerusercontent.com`). Per renderle definitive, salvale in `assets/photos/` e sostituisci gli indirizzi nelle etichette `<img>` di `index.html`. Se il vecchio sito viene disattivato, le foto collegate smettono di caricarsi.
+Le foto sono salvate in `assets/photos/` (JPEG già ritagliati e compressi) e il sito non dipende più da servizi esterni. Provengono da Unsplash, che consente l'uso commerciale senza obbligo di citare l'autore.
+
+| File | Sezione | Autore |
+| --- | --- | --- |
+| `hero-port-dusk.jpg` | Hero, porto al crepuscolo | Maik Winnecke |
+| `company-business-bay.jpg` | Company | Mohamed Reshad |
+| `metals-laboratory.jpg` | Trading, Metals | Trnava University |
+| `energy-refinery.jpg` | Trading, Energy | Maksym Kaharlytskyi |
+| `agriculture-wheat.jpg` | Trading, Agriculture | Edson Rosas |
+| `products-silicon-wafer.jpg` | Products | Laura Ockel |
+| `investments-dubai-skyline.jpg` | Investments | Ahmed Galal |
+| `solutions-burj-khalifa.jpg` | Solutions | Wael Hneini |
+| `network-desert-dunes.jpg` | Network | Faris Mohammed |
+| `contact-dubai-creek.jpg` | Contact | Hatem Ramadan |
+
+Per cambiare una foto, sostituisci il file mantenendo lo stesso nome e le stesse proporzioni (hero e Products 21:8, Contact 3:1, Company, Investments, Solutions e Network 4:3, Trading 3:2).
 
 ## Collegare il dominio www.albacovetrading.com
 
