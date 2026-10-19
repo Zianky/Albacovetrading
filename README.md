@@ -43,6 +43,14 @@ Per cambiare una foto, sostituisci il file mantenendo lo stesso nome e le stesse
 
 Per sostituirlo: tieni gli stessi nomi file, usa H.264 senza audio e sotto i 3 MB, e rigenera anche il file WebM e `assets/photos/hero-port-dusk-poster.jpg` dal primo fotogramma.
 
+## Licenze e diritti d'autore
+
+- Foto: Unsplash (licenza Unsplash, uso commerciale consentito, citazione non obbligatoria ma riportata nel footer). Non sono usate immagini Unsplash+.
+- Video e ritagli del video: Pexels (licenza Pexels, uso commerciale consentito, nessuna citazione obbligatoria).
+- Font: nessun file di font incluso, il sito usa i font di sistema del dispositivo.
+- Testi, logo e grafica: proprietà di Alba Cove Trading FZCO.
+- Sezione privacy e cookie: testo in `index.html` (blocco `#privacy`), da far rivedere a un consulente legale.
+
 ## Collegare il dominio www.albacovetrading.com
 
 1. Aggiungi nella radice del repository un file `CNAME` che contenga una sola riga: `www.albacovetrading.com`.
