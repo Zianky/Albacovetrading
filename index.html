@@ -8,373 +8,438 @@
 <link rel="canonical" href="https://www.albacovetrading.com/">
 <meta property="og:url" content="https://www.albacovetrading.com/">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#FBFDFC">
+<meta name="theme-color" content="#0E2A2C">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Alba Cove Trading FZCO | International Trading &amp; Business Development from Dubai">
 <meta property="og:description" content="Dubai-based international trading, strategic investments and business development. Industrial commodities, metals and minerals, agriculture, high-purity metals and isotopes, corporate solutions.">
 <meta property="og:locale" content="en_AE">
 <link rel="icon" type="image/png" href="assets/logo-mark.png">
 <style>
-/* Layout: a light, airy masthead taken from the logo (white ground, teal, fine serif, brush circle and waves), large left-aligned headline,
-   then plain reading sections split into a heading column and a content column.
-   The memorable element is the periodic-table tile set: every product is an element, and selecting a tile opens its specification. */
+/* Modern, dynamic layout: full-bleed video hero, sticky glass header, scrolling ticker, tabbed trading, bento cards, element tiles, scroll reveals.
+   System fonts only (no external requests), no cookies, no third-party code. Motion is switched off for prefers-reduced-motion. */
 :root{
-  --bg:#FBFDFC;
-  --surface:#EAF2F1;
-  --surface-2:#D9E7E6;
-  --fg:#1B3638;
-  --muted:#4F696B;
-  --line:#CFE0DF;
+  --ink:#0E2A2C;
+  --ink-2:#143B3E;
+  --ink-3:#1B4A4D;
+  --bg:#F6FAF9;
+  --card:#FFFFFF;
+  --tint:#E6F0EF;
+  --fg:#12302F;
+  --muted:#52696A;
+  --line:#D5E4E2;
   --brand:#3F7B7F;
-  --logo:#4C868C;
-  --on-brand:#FFFFFF;
-  --band:#1B4547;
-  --band-fg:#F2F8F7;
-  --band-muted:#A9C6C6;
-  --band-line:rgba(242,248,247,.25);
-  --f-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --brand-2:#2F6367;
+  --accent:#8AD0CB;
+  --on-dark:#F2F8F7;
+  --on-dark-muted:#A7C5C4;
+  --dark-line:rgba(242,248,247,.16);
   --f-text:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --f-brand:"Trajan Pro","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-  --gutter:clamp(20px,4vw,48px);
+  --f-serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --gutter:clamp(20px,4vw,56px);
+  --radius:20px;
+  --ease:cubic-bezier(.2,.7,.2,1);
   color-scheme:light;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:16px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.7 var(--f-text);-webkit-font-smoothing:antialiased}
-.wrap{width:min(1180px,100% - var(--gutter)*2);margin-inline:auto}
-p{margin:0}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
-.band :focus-visible{outline-color:var(--band-fg)}
-.skip{position:absolute;left:-999px;top:8px;background:var(--bg);color:var(--fg);padding:8px 12px;z-index:10}
-.skip:focus{left:8px}
-
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.65 var(--f-text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+p{margin:0;text-wrap:pretty}
 h1,h2,h3,h4{margin:0;text-wrap:balance}
-h1,h2,h3{font-family:var(--f-display);font-weight:500}
-h2{font-size:clamp(2.1rem,4vw,3.3rem);line-height:1.04;letter-spacing:-.01em}
-h3{font-weight:600;font-size:1.4rem;line-height:1.2}
-h4{font:500 1rem/1.3 var(--f-text)}
+a{color:inherit}
+img,video{max-width:100%}
+.wrap{width:min(1240px,100% - var(--gutter)*2);margin-inline:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 12px;z-index:100}
+.skip:focus{left:8px}
+a,button{touch-action:manipulation}
 
-/* masthead */
-.hero{background:var(--bg)}
-.top{display:flex;justify-content:space-between;align-items:center;gap:14px 32px;flex-wrap:wrap;padding-block:20px}
-.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--fg)}
-.logo img{display:block;width:44px;height:auto}
-.logo span{font:400 1.02rem/1 var(--f-brand);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
-nav{display:flex;flex-wrap:wrap;gap:6px 26px}
-nav a{font:400 .97rem/1.4 var(--f-text);color:var(--muted);text-decoration:none;padding-block:4px}
-nav a:hover{color:var(--fg);text-decoration:underline;text-decoration-color:var(--logo);text-underline-offset:7px;text-decoration-thickness:1px}
+/* scroll progress */
+.progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:transparent;pointer-events:none}
+.progress i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent),var(--brand));transform-origin:0 50%;transform:scaleX(0)}
 
-.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:44px clamp(32px,5vw,80px);align-items:end;padding-block:clamp(36px,6vw,88px) clamp(40px,5vw,72px)}
-.hero-grid>*{min-width:0}
-h1{font-size:clamp(2.8rem,6.2vw,5.3rem);line-height:1;letter-spacing:-.015em;color:var(--fg)}
-.lead{margin-top:clamp(22px,3vw,34px);max-width:40ch;font-size:clamp(1.1rem,1.6vw,1.25rem);line-height:1.6;color:var(--muted);font-weight:300}
-.actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
-.btn{display:inline-block;background:var(--brand);color:var(--on-brand);padding:15px 26px;border-radius:2px;font:500 1rem/1 var(--f-text);letter-spacing:.02em;text-decoration:none}
-.btn:hover{background:#316669}
-.link{font:400 1rem/1.3 var(--f-text);color:var(--fg);text-underline-offset:7px;text-decoration-thickness:1px;text-decoration-color:var(--logo)}
+/* header */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background-color .3s,backdrop-filter .3s,box-shadow .3s,transform .35s var(--ease)}
+.nav .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.nav.scrolled{background:rgba(14,42,44,.9);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 1px 0 var(--dark-line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-dark)}
+.brand img{width:38px;height:auto;display:block;filter:brightness(0) invert(1)}
+.brand span{font:500 .92rem/1 var(--f-text);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a{position:relative;color:var(--on-dark-muted);text-decoration:none;font-size:.95rem;padding:10px 14px;border-radius:999px;transition:color .2s,background-color .2s}
+.menu a:hover{color:var(--on-dark)}
+.menu a.on{color:var(--on-dark);background:rgba(242,248,247,.1)}
+.menu .cta{margin-left:8px;background:var(--on-dark);color:var(--ink);font-weight:500}
+.menu .cta:hover{background:var(--accent);color:var(--ink)}
+.burger{display:none;background:none;border:1px solid var(--dark-line);color:var(--on-dark);width:44px;height:44px;border-radius:12px;cursor:pointer}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:currentColor;margin:auto;position:relative;transition:transform .25s,top .25s,opacity .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
 
-.strip-head{font:400 .95rem/1.4 var(--f-text);color:var(--muted)}
-.strip{margin-top:12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.strip .el{aspect-ratio:1/1.08;background:var(--surface);color:var(--fg);padding:9px 11px;animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards;transition:background-color .15s,color .15s}
-.strip .el:nth-child(2){animation-delay:.05s}.strip .el:nth-child(3){animation-delay:.1s}.strip .el:nth-child(4){animation-delay:.15s}
-.strip .el:nth-child(5){animation-delay:.2s}.strip .el:nth-child(6){animation-delay:.25s}
-.strip .el:hover{background:var(--brand);color:var(--on-brand)}
-@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--on-dark);background:var(--ink);isolation:isolate;overflow:hidden}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.04)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,42,44,.78) 0%,rgba(14,42,44,.25) 38%,rgba(14,42,44,.78) 78%,var(--ink) 100%)}
+.hero-inner{padding-block:140px 40px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font:500 .8rem/1 var(--f-text);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+h1{font:600 clamp(2.7rem,8.4vw,7.2rem)/.96 var(--f-text);letter-spacing:-.045em;max-width:15ch;margin-top:22px}
+h1 em,.h2 em,h2 em{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--accent)}
+.hero .lead{margin-top:26px;max-width:52ch;font-size:clamp(1.05rem,1.5vw,1.28rem);color:rgba(242,248,247,.86)}
+.actions{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font:500 1rem/1 var(--f-text);text-decoration:none;border:1px solid transparent;transition:transform .25s var(--ease),background-color .2s,color .2s,border-color .2s}
+.btn.primary{background:var(--accent);color:var(--ink)}
+.btn.primary:hover{background:#fff;transform:translateY(-2px)}
+.btn.ghost{border-color:rgba(242,248,247,.4);color:var(--on-dark)}
+.btn.ghost:hover{background:rgba(242,248,247,.12);transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(36px,6vw,64px);padding-bottom:clamp(20px,3vw,32px)}
+.chip{padding:10px 16px;border:1px solid var(--dark-line);border-radius:999px;font-size:.9rem;color:var(--on-dark-muted);background:rgba(14,42,44,.35);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.chip b{color:var(--on-dark);font-weight:500}
+.cue{position:absolute;right:var(--gutter);bottom:34px;display:flex;align-items:center;gap:10px;color:var(--on-dark-muted);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
+.cue i{width:1px;height:46px;background:linear-gradient(var(--accent),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-/* wave motif from the logo */
-.waves{height:34px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='34' viewBox='0 0 160 34'%3E%3Cpath d='M0 12 C26 2 54 2 80 12 S134 22 160 12' fill='none' stroke='%234C868C' stroke-width='1.5'/%3E%3Cpath d='M0 22 C26 12 54 12 80 22 S134 32 160 22' fill='none' stroke='%234C868C' stroke-width='1' opacity='.55'/%3E%3C/svg%3E") repeat-x center/160px 34px}
-
-/* element tiles */
-.el{display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font-family:var(--f-text);border:0;border-radius:2px;min-width:0}
-.el .z{font-weight:400;font-size:.8rem;line-height:1;opacity:.8}
-.el .sym{font-family:var(--f-display);font-weight:600;font-size:clamp(1.9rem,3vw,2.7rem);line-height:1}
-.el sup{font-family:var(--f-text);font-size:.38em;font-weight:500;vertical-align:1.5em;line-height:0;margin-right:.12em}
-.tiles .el{background:var(--surface);color:var(--fg);padding:14px 14px 12px;aspect-ratio:1/1.05;transition:background-color .15s,color .15s}
-.tiles .el .sym{font-size:clamp(2.4rem,4.6vw,3.9rem)}
-.tiles .el .nm{display:block;font-weight:500;font-size:.95rem;line-height:1.2}
-.tiles .el .ms{display:block;font-weight:300;font-size:.8rem;line-height:1.3;margin-top:2px}
-.tiles .el:hover{background:var(--surface-2)}
-.tiles .el[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
-.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+/* ticker */
+.ticker{background:var(--ink);color:var(--on-dark);border-block:1px solid var(--dark-line);overflow:hidden;white-space:nowrap}
+.ticker .track{display:inline-flex;animation:tick 48s linear infinite;will-change:transform}
+.ticker:hover .track{animation-play-state:paused}
+.ticker span{display:inline-flex;align-items:center;gap:28px;padding:20px 14px 20px 0;font:500 clamp(1rem,2vw,1.35rem)/1 var(--f-text);letter-spacing:-.01em}
+.ticker span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);margin-left:14px}
+@keyframes tick{to{transform:translateX(-50%)}}
 
 /* sections */
-section{padding-block:clamp(56px,9vw,112px)}
-.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px clamp(32px,6vw,96px);align-items:start}
-.split>div{min-width:0}
-.sub{margin-top:18px;max-width:34ch;color:var(--muted)}
-.stack>*+*{margin-top:1.1em}
-.big{font:500 clamp(1.6rem,2.7vw,2.15rem)/1.22 var(--f-display);color:var(--fg);max-width:30ch}
+section{padding-block:clamp(72px,10vw,140px)}
+.eyebrow{font:500 .8rem/1 var(--f-text);letter-spacing:.2em;text-transform:uppercase;color:var(--brand)}
+.dark .eyebrow{color:var(--accent)}
+h2{font:600 clamp(2.1rem,5vw,4.2rem)/1.02 var(--f-text);letter-spacing:-.035em;margin-top:16px;max-width:18ch}
+h2 em{color:var(--brand)}
+.dark h2 em{color:var(--accent)}
+.lede{margin-top:20px;max-width:58ch;color:var(--muted);font-size:1.12rem}
+.dark{background:var(--ink);color:var(--on-dark)}
+.dark .lede{color:var(--on-dark-muted)}
+.tint{background:var(--tint)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-bottom:clamp(36px,5vw,64px)}
+.head .lede{margin-top:0;max-width:46ch}
+
+/* cards and bento */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(22px,2.6vw,34px);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(14,42,44,.35);border-color:var(--brand)}
+.card h3{font:600 1.35rem/1.2 var(--f-text);letter-spacing:-.02em}
+.card p{margin-top:10px;color:var(--muted);font-size:1rem}
+.card .n{display:block;font:500 .85rem/1 var(--f-text);color:var(--brand);letter-spacing:.12em;margin-bottom:22px}
+.dark .card{background:var(--ink-2);border-color:var(--dark-line)}
+.dark .card p{color:var(--on-dark-muted)}
+.dark .card:hover{border-color:var(--accent)}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px clamp(32px,6vw,96px);align-items:start}
+.split>*{min-width:0}
+.sticky{position:sticky;top:110px}
+.prose>*+*{margin-top:1.1em}
+.big{font:500 clamp(1.5rem,2.6vw,2.2rem)/1.22 var(--f-text);letter-spacing:-.025em;color:var(--fg)}
 .muted{color:var(--muted)}
+.photo{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--tint)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.photo:hover img{transform:scale(1.05)}
+.spec.facts{margin:34px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.facts dt{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:6px 0 0;font:500 1.05rem/1.35 var(--f-text);color:var(--fg)}
+.quote{margin:clamp(40px,5vw,64px) 0 0;padding:clamp(28px,4vw,52px);border-radius:var(--radius);background:linear-gradient(135deg,var(--ink-2),var(--ink));color:var(--on-dark);position:relative;overflow:hidden}
+.quote::before{content:"“";position:absolute;right:28px;top:-28px;font:400 14rem/1 var(--f-serif);color:rgba(138,208,203,.14)}
+.quote p{font:400 clamp(1.15rem,1.9vw,1.5rem)/1.5 var(--f-serif);max-width:62ch;position:relative}
+.quote p+p{margin-top:.9em}
+.quote figcaption{margin-top:22px;color:var(--on-dark-muted);font-size:.95rem}
+.quote figcaption strong{display:block;color:var(--on-dark);font-weight:500}
 
-.rows{border-bottom:1px solid var(--line)}
-.row{display:grid;grid-template-columns:minmax(0,11.5rem) minmax(0,1fr);gap:6px 32px;padding-block:22px;border-top:1px solid var(--line)}
-.rows>.row:first-child{border-top:1px solid var(--logo)}
-.row>div{min-width:0}
-.row p{color:var(--muted)}
-.row p+p{margin-top:.7em}
-.row .items{font:400 1rem/1.7 var(--f-text);color:var(--fg);margin-top:.9em}
+/* tabs (trading) */
+.tabs{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:stretch}
+.tablist{display:flex;flex-direction:column;gap:8px}
+.tab{display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;background:transparent;border:1px solid var(--line);border-radius:16px;padding:16px 20px;font:500 1.08rem/1.3 var(--f-text);color:var(--fg);cursor:pointer;transition:background-color .25s,border-color .25s,color .25s,transform .3s var(--ease)}
+.tab:hover{border-color:var(--brand);transform:translateX(4px)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--on-dark);border-color:var(--ink)}
+.tab i{font:500 .8rem/1 var(--f-text);letter-spacing:.1em;opacity:.6;font-style:normal}
+.stage{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--ink);min-height:520px;color:var(--on-dark)}
+.stage .bg{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--ease)}
+.stage .bg.on{opacity:1}
+.stage .bg img{width:100%;height:100%;object-fit:cover;display:block}
+.stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,42,44,.1) 0%,rgba(14,42,44,.55) 45%,rgba(14,42,44,.94) 100%)}
+.tabpanel{position:absolute;inset:auto 0 0 0;z-index:2;padding:clamp(22px,3vw,40px)}
+.tabpanel h3{font:600 clamp(1.5rem,2.6vw,2.2rem)/1.1 var(--f-text);letter-spacing:-.03em}
+.tabpanel p{margin-top:12px;color:rgba(242,248,247,.88);max-width:60ch}
+.tabpanel .items{margin-top:14px;color:var(--accent);font-weight:500}
+.tabpanel:not([hidden]){animation:rise .55s var(--ease)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
 
-.alt{background:var(--surface)}
-.lede{max-width:56ch;color:var(--muted);margin-top:18px}
-
-/* product panel */
-.panel{margin-top:28px;padding-top:28px;border-top:1px solid var(--logo);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px clamp(32px,6vw,96px)}
+/* element tiles */
+.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:8px}
+.el{display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font-family:var(--f-text);border:1px solid var(--dark-line);border-radius:18px;min-width:0;background:var(--ink-2);color:var(--on-dark);padding:16px 16px 14px;aspect-ratio:1/1.1;transition:transform .3s var(--ease),background-color .25s,color .25s,border-color .25s}
+.el:hover{transform:translateY(-6px);border-color:var(--accent)}
+.el[aria-pressed="true"]{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.el .z{font-size:.82rem;opacity:.7}
+.el .sym{font:600 clamp(2.2rem,4.4vw,3.8rem)/1 var(--f-text);letter-spacing:-.04em}
+.el sup{font-size:.36em;font-weight:500;vertical-align:1.6em;line-height:0;margin-right:.1em}
+.el .nm{display:block;font-weight:500;font-size:.95rem;line-height:1.2}
+.el .ms{display:block;font-size:.8rem;opacity:.7;margin-top:2px}
+.panel{margin-top:28px;border:1px solid var(--dark-line);border-radius:var(--radius);background:linear-gradient(160deg,var(--ink-2),var(--ink));padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px clamp(32px,6vw,96px)}
 .panel>div{min-width:0}
-.panel:not([hidden]){animation:fade .2s ease-out}
-@keyframes fade{from{opacity:0}}
-.panel h3{font-weight:500;font-size:clamp(2.1rem,3.6vw,3rem);line-height:1.02;letter-spacing:-.01em}
-.panel .aside{margin-top:10px;color:var(--muted);max-width:26ch}
+.panel:not([hidden]){animation:rise .45s var(--ease)}
+.panel h3{font:600 clamp(2rem,3.6vw,3rem)/1.02 var(--f-text);letter-spacing:-.035em}
+.panel .aside{margin-top:10px;color:var(--on-dark-muted);max-width:26ch}
 .panel .aside sup{font-size:.7em;vertical-align:.4em;line-height:0}
-.form+.form{margin-top:36px}
-.form h4{margin-bottom:10px}
+.form+.form{margin-top:34px}
+.form h4{font:500 1rem/1.3 var(--f-text);margin-bottom:10px;color:var(--accent)}
 .spec{margin:0;display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr)}
-.spec dt,.spec dd{padding-block:9px;border-top:1px solid var(--line)}
-.spec dt{font:400 .92rem/1.6 var(--f-text);color:var(--muted)}
-.spec dd{margin:0;font-size:1rem;overflow-wrap:anywhere}
-.uses{margin-top:12px;max-width:62ch}
-.uses b{font-weight:500;margin-right:.5em}
-.facts{margin-top:2em}
-.quote{margin:2.4em 0 0;padding:28px 0 0;border-top:1px solid var(--logo)}
-.quote blockquote{margin:0}
-.quote blockquote p{font:500 clamp(1.15rem,1.7vw,1.35rem)/1.5 var(--f-display);color:var(--fg);max-width:60ch}
-.quote blockquote p+p{margin-top:.9em}
-.quote figcaption{margin-top:18px;color:var(--muted);font-size:.95rem}
-.quote figcaption strong{display:block;font-weight:500;color:var(--fg);font-size:1.05rem}
-.terms{margin-top:36px;max-width:70ch;color:var(--muted);font-size:1rem}
+.panel .spec dt,.panel .spec dd{padding-block:10px;border-top:1px solid var(--dark-line)}
+.panel .spec dt{color:var(--on-dark-muted);font-size:.92rem}
+.panel .spec dd{margin:0;overflow-wrap:anywhere}
+.uses{margin-top:14px;max-width:62ch;color:var(--on-dark-muted)}
+.uses b{color:var(--on-dark);font-weight:500;margin-right:.5em}
+.terms{margin-top:30px;max-width:72ch;color:var(--on-dark-muted);font-size:1rem}
+.products-photo{margin-top:clamp(36px,5vw,60px);aspect-ratio:21/8}
+
+/* pills */
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.pills li{list-style:none;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:.95rem;transition:background-color .2s,color .2s,transform .25s var(--ease)}
+.pills li:hover{background:var(--ink);color:var(--on-dark);transform:translateY(-2px)}
+ul.pills{padding:0;margin-bottom:0}
+.steps{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;counter-reset:s}
+.steps span{counter-increment:s;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--on-dark);font-size:.95rem}
+.steps span::before{content:counter(s);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--ink);font-size:.8rem;font-weight:600}
+
+/* investments feature */
+.feature{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:18px;margin-bottom:18px}
+.feature .photo{min-height:420px}
+.feature .card.hero-card{display:flex;flex-direction:column;justify-content:center}
 
 /* journey */
-.journey{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 28px;counter-reset:j}
-.journey li{counter-increment:j;border-top:1px solid var(--logo);padding-top:12px;font:500 1.02rem/1.35 var(--f-text)}
-.journey small{display:block;margin-top:6px;font:400 .95rem/1.5 var(--f-text);color:var(--muted)}
-.journey li::before{content:counter(j);display:block;font:500 2.5rem/1 var(--f-display);color:var(--brand);margin-bottom:8px}
+.timeline{list-style:none;margin:clamp(36px,5vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;position:relative;counter-reset:j}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;background:var(--dark-line)}
+.timeline::after{content:"";position:absolute;left:0;top:19px;height:2px;width:100%;background:var(--accent);transform:scaleX(var(--p,0));transform-origin:0 50%}
+.timeline li{counter-increment:j;position:relative;padding-top:58px;font:500 1.05rem/1.3 var(--f-text)}
+.timeline li::before{content:counter(j);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--ink-2);border:2px solid var(--dark-line);color:var(--on-dark);font-weight:600;transition:background-color .4s,color .4s,border-color .4s}
+.timeline li.on::before{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.timeline small{display:block;margin-top:8px;font:400 .93rem/1.5 var(--f-text);color:var(--on-dark-muted)}
 
 /* contact */
-.band{background:var(--band);color:var(--band-fg)}
-.contact{padding-block:clamp(56px,9vw,112px)}
-.contact h2{font-size:clamp(2.4rem,5.4vw,4.4rem);max-width:18ch;line-height:1}
-.contact .intro{margin-top:20px;max-width:52ch;color:var(--band-muted)}
-.mail{display:inline-block;margin-top:clamp(28px,4vw,44px);font:600 clamp(1.6rem,4vw,2.9rem)/1.2 var(--f-display);overflow-wrap:anywhere;text-underline-offset:8px;text-decoration-thickness:1px}
-.details{margin:clamp(28px,4vw,44px) 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px 40px}
-.details dt{font:400 .92rem/1.4 var(--f-text);color:var(--band-muted);margin-bottom:6px}
-.details dd{margin:0;font-size:1.1rem;line-height:1.5}
-.copy{margin-left:10px;font:400 .85rem/1 var(--f-text);background:none;color:var(--band-fg);border:1px solid var(--band-line);padding:6px 10px;border-radius:2px;cursor:pointer}
-.copy:hover{border-color:var(--band-fg)}
-.legal a{color:inherit}
+.contact h2{max-width:16ch;font-size:clamp(2.4rem,6vw,5.2rem)}
+.mail{display:inline-block;margin-top:clamp(28px,4vw,44px);font:600 clamp(1.6rem,4.6vw,3.6rem)/1.15 var(--f-text);letter-spacing:-.03em;overflow-wrap:anywhere;text-decoration-thickness:2px;text-underline-offset:10px;text-decoration-color:var(--accent);transition:color .2s}
+.mail:hover{color:var(--accent)}
+.details{margin:clamp(30px,4vw,48px) 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.details>div{border:1px solid var(--dark-line);border-radius:16px;padding:18px 20px;background:rgba(242,248,247,.04)}
+.details dt{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:8px}
+.details dd{margin:0;font-size:1.08rem;line-height:1.5}
+.copy{margin-left:10px;font:400 .85rem/1 var(--f-text);background:none;color:var(--on-dark);border:1px solid var(--dark-line);padding:10px 14px;border-radius:999px;cursor:pointer;transition:border-color .2s,background-color .2s}
+.copy:hover{border-color:var(--accent);background:rgba(138,208,203,.1)}
+.legal{margin-top:clamp(30px,4vw,56px);padding-top:22px;border-top:1px solid var(--dark-line);max-width:84ch;font-size:.9rem;line-height:1.65;color:var(--on-dark-muted)}
 .legal+.legal{margin-top:18px;padding-top:0;border-top:0}
-.legal{margin-top:clamp(36px,5vw,64px);padding-top:22px;border-top:1px solid var(--band-line);max-width:78ch;font-size:.9rem;line-height:1.6;color:var(--band-muted)}
-.foot{padding-block:40px 36px;border-top:1px solid var(--band-line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px}
-.foot img{display:block;width:min(300px,70%);height:auto}
-.foot p{font:400 .9rem/1.6 var(--f-text);color:var(--band-muted);text-align:right}
+.legal p+p{margin-top:.8em}
+.legal a{color:inherit}
+.contact-photo{margin-top:clamp(36px,5vw,60px);aspect-ratio:21/7}
+.foot{padding-block:40px 36px;border-top:1px solid var(--dark-line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px}
+.foot img{display:block;width:min(260px,70%);height:auto}
+.foot p{font-size:.9rem;line-height:1.6;color:var(--on-dark-muted);text-align:right}
 
-.photo{margin:0;background:var(--surface);overflow:hidden;border-radius:2px}
-.photo img,.photo video{display:block;width:100%;height:100%;object-fit:cover}
-.banner{aspect-ratio:21/8}
-.side{margin-top:28px;aspect-ratio:4/3}
-.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:clamp(40px,6vw,64px)}
-.trio figure{margin:0}
-.trio .photo{aspect-ratio:3/2}
-.trio h3{margin-top:12px}
-.trio p{margin-top:4px;color:var(--muted);font-size:1rem;max-width:32ch}
-.contact-photo{aspect-ratio:21/7;margin-top:clamp(40px,6vw,72px)}
-.products-photo{margin-top:clamp(40px,6vw,64px)}
-.hero-photo{margin-top:0}
-.waves{margin-top:clamp(28px,4vw,48px)}
-a,button{touch-action:manipulation}
-p{text-wrap:pretty}
-.spec dd,.el .z,.el .ms{font-variant-numeric:tabular-nums}
-nav a{padding-block:8px}
-.copy{padding:10px 14px}
-@media (max-width:960px){
-  .split,.panel,.hero-grid{grid-template-columns:minmax(0,1fr)}
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.js .words span{display:inline-block;opacity:0;transform:translateY(.6em);animation:word .9s var(--ease) forwards;animation-delay:calc(var(--i)*70ms + 150ms)}
+@keyframes word{to{opacity:1;transform:none}}
+
+@media (max-width:1020px){
+  .split,.tabs,.panel,.feature{grid-template-columns:minmax(0,1fr)}
+  .sticky{position:static}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .timeline{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 18px}
+  .timeline::before,.timeline::after{display:none}
+  .tablist{flex-direction:row;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+  .tab{flex:0 0 auto;white-space:nowrap}
+  .tab i{display:none}
+  .stage{min-height:480px}
+  .burger{display:block}
+  .menu{position:fixed;inset:72px 0 auto 0;flex-direction:column;align-items:stretch;gap:2px;padding:14px var(--gutter) 24px;background:rgba(14,42,44,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--dark-line);transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s}
+  .menu.open{transform:none;opacity:1;visibility:visible}
+  .menu a{padding:14px 12px;font-size:1.05rem;border-radius:12px}
+  .menu .cta{margin:8px 0 0;text-align:center}
 }
 @media (max-width:620px){
-  nav{gap:0 18px}
-  nav a{font-size:.92rem}
-  .banner{aspect-ratio:16/10}
-  .contact-photo{aspect-ratio:16/9}
-  .trio{grid-template-columns:minmax(0,1fr)}
-  .logo span{font-size:.82rem;letter-spacing:.14em}
-  .logo img{width:38px}
-  .row{grid-template-columns:minmax(0,1fr)}
+  .g4,.g3,.g2,.spec.facts{grid-template-columns:minmax(0,1fr)}
+  .brand span{font-size:.78rem;letter-spacing:.14em}
+  .brand img{width:32px}
+  .cue{display:none}
+  .el{padding:12px;aspect-ratio:1/1}
+  .el .nm{font-size:.78rem}
+  .el .ms{display:none}
   .spec{grid-template-columns:minmax(0,1fr)}
-  .spec dt{padding-bottom:0;border-top:1px solid var(--line)}
-  .spec dd{border-top:0;padding-top:2px}
-  .journey{grid-template-columns:minmax(0,1fr)}
-  .tiles .el{padding:10px 10px 9px}
-  .tiles .el .nm{font-size:.74rem;overflow-wrap:break-word}
-  .tiles .el .ms{display:none}
+  .panel .spec dt{padding-bottom:0}
+  .panel .spec dd{border-top:0;padding-top:2px}
+  .products-photo{aspect-ratio:16/10}
+  .contact-photo{aspect-ratio:16/9}
+  .timeline{grid-template-columns:minmax(0,1fr)}
   .foot p{text-align:left}
+  .stage{min-height:560px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .strip .el,.panel:not([hidden]){animation:none}
-  .tiles .el,.strip .el{transition:none}
+  .ticker .track{animation:none;flex-wrap:wrap;white-space:normal}
+  .ticker{white-space:normal}
+  .cue i{animation:none}
+  .js .reveal,.js .words span{opacity:1;transform:none;animation:none;transition:none}
+  .tabpanel:not([hidden]),.panel:not([hidden]){animation:none}
+  .photo img,.card,.el,.tab,.btn{transition:none}
+  .stage .bg{transition:none}
 }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Alba Cove Trading", "legalName": "Alba Cove Trading FZCO", "description": "Dubai-based international trading, strategic investments and business development. Industrial commodities, metals and minerals, agriculture, high-purity metals and isotopes, corporate solutions.", "email": "info@albacovetrading.com", "telephone": "+971563999345", "address": {"@type": "PostalAddress", "streetAddress": "Building A1, Dubai Digital Park, Dubai Silicon Oasis", "addressLocality": "Dubai", "addressCountry": "AE"}}</script>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<header class="nav" id="nav">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Alba Cove Trading, home"><img src="assets/logo-mark.png" alt="" width="290" height="300"><span>Alba Cove Trading</span></a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#company">Company</a>
+      <a href="#trading">Trading</a>
+      <a href="#products">Products</a>
+      <a href="#investments">Investments</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#network">Network</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
 <div class="hero" id="top">
-  <div class="wrap">
-    <header class="top">
-      <a class="logo" href="#top" aria-label="Alba Cove Trading, home"><img src="assets/logo-mark.png" alt="" width="290" height="300"><span>Alba Cove Trading</span></a>
-      <nav aria-label="Main">
-        <a href="#company">Company</a>
-        <a href="#trading">Trading</a>
-        <a href="#products">Products</a>
-        <a href="#investments">Investments</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#network">Network</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <div class="hero-grid">
-      <div>
-      <h1>Trading beyond borders. Creating global opportunities.</h1>
-      <p class="lead">Alba Cove Trading is a Dubai-based platform for international trade, strategic investments and business development, connecting trusted suppliers, buyers and investors across global markets.</p>
-      <div class="actions">
-        <a class="btn" href="#contact">Discuss an opportunity</a>
-        <a class="link" href="#products">See metals and isotopes</a>
-      </div>
-      </div>
-
-      <div>
-      <p class="strip-head" id="strip-label">High-purity metals and isotopes we supply</p>
-      <div class="strip" role="group" aria-labelledby="strip-label">
-        <button class="el" type="button" data-target="p-al" aria-label="Aluminium, view specification"><span class="z">13</span><span class="sym">Al</span></button>
-        <button class="el" type="button" data-target="p-ni" aria-label="Nickel, view specification"><span class="z">28</span><span class="sym">Ni</span></button>
-        <button class="el" type="button" data-target="p-cu" aria-label="Copper, view specification"><span class="z">29</span><span class="sym">Cu</span></button>
-        <button class="el" type="button" data-target="p-zn" aria-label="Zinc, view specification"><span class="z">30</span><span class="sym">Zn</span></button>
-        <button class="el" type="button" data-target="p-cs" aria-label="Caesium, view specification"><span class="z">55</span><span class="sym">Cs</span></button>
-        <button class="el" type="button" data-target="p-w" aria-label="Tungsten-184, view specification"><span class="z">74</span><span class="sym"><sup>184</sup>W</span></button>
-      </div>
-      </div>
+  <video autoplay muted loop playsinline preload="auto" poster="assets/photos/hero-port-dusk-poster.jpg" aria-hidden="true"><source src="assets/video/hero-port-dusk.mp4" type="video/mp4"><source src="assets/video/hero-port-dusk.webm" type="video/webm"></video>
+  <div class="wrap hero-inner">
+    <span class="kicker">Dubai · United Arab Emirates</span>
+    <h1 class="words" aria-label="Trading beyond borders. Creating global opportunities."><span style="--i:0">Trading</span> <span style="--i:1">beyond</span> <span style="--i:2">borders.</span> <em><span style="--i:3">Creating</span> <span style="--i:4">global</span> <span style="--i:5">opportunities.</span></em></h1>
+    <p class="lead">A Dubai-based platform for international trade, strategic investments and business development, connecting trusted suppliers, buyers and investors across global markets.</p>
+    <div class="actions">
+      <a class="btn primary" href="#contact">Discuss an opportunity <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn ghost" href="#products">Metals and isotopes</a>
+    </div>
+    <div class="chips" aria-label="Key facts">
+      <span class="chip">Headquarters <b>Dubai Silicon Oasis</b></span>
+      <span class="chip">Model <b>B2B international trading</b></span>
+      <span class="chip">License <b>62515</b></span>
     </div>
   </div>
+  <a class="cue" href="#company" aria-label="Scroll to company"><span>Scroll</span><i></i></a>
 </div>
-<div class="wrap"><figure class="photo banner hero-photo"><video autoplay muted loop playsinline preload="auto" poster="assets/photos/hero-port-dusk-poster.jpg" width="1920" height="732" role="img" aria-label="Aerial view of a container terminal at dusk"><source src="assets/video/hero-port-dusk.mp4" type="video/mp4"><source src="assets/video/hero-port-dusk.webm" type="video/webm"></video></figure></div>
-<div class="waves" aria-hidden="true"></div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Industrial chemicals</span><span>Sulfur granules</span><span>Copper</span><span>Aluminium</span><span>Nickel</span><span>Zinc</span><span>Caesium</span><span>Tungsten-184</span><span>Coffee</span><span>Cocoa</span><span>Rice</span><span>Sugar</span><span>Sesame</span><span>Cashew nuts</span><span>Corn</span><span>Wheat</span><span>Fertilizers</span><span>Urea</span>
+    <span>Industrial chemicals</span><span>Sulfur granules</span><span>Copper</span><span>Aluminium</span><span>Nickel</span><span>Zinc</span><span>Caesium</span><span>Tungsten-184</span><span>Coffee</span><span>Cocoa</span><span>Rice</span><span>Sugar</span><span>Sesame</span><span>Cashew nuts</span><span>Corn</span><span>Wheat</span><span>Fertilizers</span><span>Urea</span>
+  </div>
+</div>
 
 <main id="main">
   <section id="company" aria-labelledby="company-title">
     <div class="wrap split">
-      <div>
-        <h2 id="company-title">A global platform for trade, investment and business development.</h2>
-        <figure class="photo side"><img src="assets/photos/company-business-bay.jpg" width="1200" height="900" alt="Dubai skyline and the Burj Khalifa at dusk, seen from Business Bay" loading="lazy" decoding="async"></figure>
+      <div class="sticky">
+        <span class="eyebrow">Company</span>
+        <h2 id="company-title">A global platform for trade, investment and <em>business development.</em></h2>
+        <figure class="photo reveal" style="margin-top:32px;aspect-ratio:4/3"><img src="assets/photos/company-business-bay.jpg" width="1200" height="900" alt="Dubai skyline and the Burj Khalifa at dusk, seen from Business Bay" loading="lazy" decoding="async"></figure>
       </div>
-      <div class="stack">
-        <p class="big">Alba Cove Trading FZCO is an international trading and business development company headquartered in Dubai, United Arab Emirates.</p>
-        <p>Established in the UAE, one of the world’s leading commercial and logistics hubs, we focus on global commodity trading, industrial raw materials, metals and international business facilitation. Our integrated model combines trading, strategic investments, business development and project coordination across international markets.</p>
-        <p>We were founded to connect businesses, investors and commercial opportunities across industries. Rather than operating as a traditional trading company, Alba Cove serves as a strategic business platform, bringing together commercial expertise, professional coordination and access to international markets, with reliability, transparency, compliance and efficient execution.</p>
-        <p class="muted">An international vision and a local UAE presence. Strategic thinking, commercial excellence, long-term relationships and professional integrity.</p>
+      <div class="prose">
+        <p class="big reveal">Alba Cove Trading FZCO is an international trading and business development company headquartered in Dubai, United Arab Emirates.</p>
+        <p class="reveal">Established in the UAE, one of the world’s leading commercial and logistics hubs, we focus on global commodity trading, industrial raw materials, metals and international business facilitation. Our integrated model combines trading, strategic investments, business development and project coordination across international markets.</p>
+        <p class="reveal">We were founded to connect businesses, investors and commercial opportunities across industries. Rather than operating as a traditional trading company, Alba Cove serves as a strategic business platform, bringing together commercial expertise, professional coordination and access to international markets, with reliability, transparency, compliance and efficient execution.</p>
 
-        <dl class="spec facts">
-          <dt>Company</dt><dd>Alba Cove Trading FZCO</dd>
-          <dt>Legal structure</dt><dd>Free Zone Company (FZCO), United Arab Emirates</dd>
-          <dt>License</dt><dd>62515</dd>
-          <dt>Business activity</dt><dd>International trading and commercial representation</dd>
-          <dt>Business model</dt><dd>B2B international trading</dd>
-          <dt>Core markets</dt><dd>Middle East, Africa, Europe, Asia</dd>
-          <dt>Main sectors</dt><dd>Commodities, metals and minerals, agriculture, industrial products</dd>
+        <dl class="spec facts reveal">
+          <div><dt>Company</dt><dd>Alba Cove Trading FZCO</dd></div>
+          <div><dt>Legal structure</dt><dd>Free Zone Company (FZCO), UAE</dd></div>
+          <div><dt>License</dt><dd>62515</dd></div>
+          <div><dt>Business activity</dt><dd>International trading and commercial representation</dd></div>
+          <div><dt>Core markets</dt><dd>Middle East, Africa, Europe, Asia</dd></div>
+          <div><dt>Main sectors</dt><dd>Commodities, metals and minerals, agriculture, industrial products</dd></div>
         </dl>
 
-        <h3 style="margin-top:2.2em">Vision, mission and values</h3>
-        <div class="rows" style="margin-top:14px">
-          <div class="row"><h3>Vision</h3><p>To become a trusted global trading partner and a leading international business platform, recognized for professionalism, reliability and strategic commercial solutions, and the preferred route to international markets through the UAE for corporations, institutional investors and entrepreneurs.</p></div>
-          <div class="row"><h3>Mission</h3><p>To facilitate secure and efficient international trade and coordinate strategic investments. We connect reliable suppliers with qualified buyers worldwide, support clients with professional sourcing, negotiation, logistics and trade coordination, and build lasting partnerships across industries and regions through ethical business practices.</p></div>
-          <div class="row"><h3>Values</h3><p>Integrity, professionalism, reliability, transparency, compliance, excellence, innovation, collaboration and long-term vision.</p></div>
-          <div class="row"><h3>Philosophy</h3><p>Beyond trading. Every commercial transaction is the beginning of a long-term relationship rather than a single business event. We coordinate people, expertise and opportunities within a structured global ecosystem, with a client-centric approach, a global perspective and responsible business conduct.</p></div>
+        <div class="grid g2" style="margin-top:34px">
+          <div class="card reveal"><span class="n">VISION</span><h3>A trusted global partner</h3><p>To become a trusted global trading partner and a leading international business platform, recognized for professionalism, reliability and strategic commercial solutions, and the preferred route to international markets through the UAE for corporations, institutional investors and entrepreneurs.</p></div>
+          <div class="card reveal" style="--d:.08s"><span class="n">MISSION</span><h3>Connecting markets</h3><p>To facilitate secure and efficient international trade and coordinate strategic investments. We connect reliable suppliers with qualified buyers worldwide and support clients with professional sourcing, negotiation, logistics and trade coordination, through ethical business practices.</p></div>
+          <div class="card reveal"><span class="n">VALUES</span><h3>How we work</h3><p>Integrity, professionalism, reliability, transparency, compliance, excellence, innovation, collaboration and long-term vision.</p></div>
+          <div class="card reveal" style="--d:.08s"><span class="n">PHILOSOPHY</span><h3>Beyond trading</h3><p>Every commercial transaction is the beginning of a long-term relationship rather than a single business event, with a client-centric approach, a global perspective and responsible business conduct.</p></div>
         </div>
-
-        <h3 style="margin-top:2.2em">Alba Cove Business Ecosystem™</h3>
-        <p class="muted" style="margin-top:8px">One platform, multiple business solutions, international reach and tailor-made strategies, with coordinated project execution.</p>
-        <div class="rows" style="margin-top:14px">
-          <div class="row"><h3>Global Trading</h3><p>Industrial commodities, metals and minerals, agricultural commodities and industrial raw materials.</p></div>
-          <div class="row"><h3>Strategic Investments</h3><p>Real estate, joint ventures and infrastructure projects.</p></div>
-          <div class="row"><h3>Corporate Solutions</h3><p>Company formation, structuring, licensing and operational support.</p></div>
-          <div class="row"><h3>Business Development</h3><p>International expansion, market entry, strategic partnerships and project development.</p></div>
-        </div>
-
-        <figure class="quote">
-          <blockquote>
-            <p>Today’s international economy requires more than products and transactions. It requires trusted relationships, strategic vision and the ability to connect opportunities across global markets.</p>
-            <p>Alba Cove Trading FZCO was established to serve as a trusted international partner for corporations, investors, institutions and entrepreneurs seeking sustainable growth through international trade and strategic investments. Every project we undertake is built upon integrity, professionalism, transparency and a commitment to creating sustainable value.</p>
-            <p>We believe that the future belongs to organizations capable of connecting global markets with innovative solutions and long-lasting partnerships. We look forward to building that future together.</p>
-          </blockquote>
-          <figcaption><strong>The Management</strong>Alba Cove Trading FZCO</figcaption>
-        </figure>
       </div>
+    </div>
+
+    <div class="wrap" style="margin-top:clamp(56px,8vw,110px)">
+      <span class="eyebrow">Alba Cove Business Ecosystem™</span>
+      <h2 style="max-width:22ch">One platform. Multiple business <em>solutions.</em></h2>
+      <div class="grid g4" style="margin-top:36px">
+        <div class="card reveal"><span class="n">01</span><h3>Global Trading</h3><p>Industrial commodities, metals and minerals, agricultural commodities and industrial raw materials.</p></div>
+        <div class="card reveal" style="--d:.07s"><span class="n">02</span><h3>Strategic Investments</h3><p>Real estate, joint ventures and infrastructure projects.</p></div>
+        <div class="card reveal" style="--d:.14s"><span class="n">03</span><h3>Corporate Solutions</h3><p>Company formation, structuring, licensing and operational support.</p></div>
+        <div class="card reveal" style="--d:.21s"><span class="n">04</span><h3>Business Development</h3><p>International expansion, market entry, strategic partnerships and project development.</p></div>
+      </div>
+      <figure class="quote reveal">
+        <blockquote style="margin:0">
+          <p>Today’s international economy requires more than products and transactions. It requires trusted relationships, strategic vision and the ability to connect opportunities across global markets.</p>
+          <p>Alba Cove Trading FZCO was established to serve as a trusted international partner for corporations, investors, institutions and entrepreneurs seeking sustainable growth through international trade and strategic investments. Every project we undertake is built upon integrity, professionalism, transparency and a commitment to creating sustainable value.</p>
+          <p>We believe that the future belongs to organizations capable of connecting global markets with innovative solutions and long-lasting partnerships. We look forward to building that future together.</p>
+        </blockquote>
+        <figcaption><strong>The Management</strong>Alba Cove Trading FZCO</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section id="trading" class="alt" aria-labelledby="trading-title">
-    <div class="wrap split">
-      <div>
-        <h2 id="trading-title">International trading without borders.</h2>
-        <p class="sub">Through an established network of producers, exporters, manufacturers and commercial partners, we facilitate the sourcing and trading of strategic commodities with transparency, operational efficiency and long-term cooperation.</p>
-      </div>
-      <div>
-        <p style="margin-bottom:26px">Trading activities cover industrial commodities, metals and minerals, agricultural commodities, industrial raw materials and government supply projects across the Middle East, Africa, Europe, Asia and Latin America.</p>
-        <div class="rows">
-          <div class="row">
-            <h3>Commodities and raw materials</h3>
-            <div>
-              <p>Reliable supply of industrial inputs, supported by supplier identification, commercial negotiation, contract coordination, logistics coordination, documentation management and transaction support.</p>
-              <p class="items">Sulfur granules, industrial chemicals and industrial raw materials.</p>
-            </div>
-          </div>
-          <div class="row">
-            <h3>Metals and minerals</h3>
-            <div>
-              <p>Industrial and base metals and mineral resources, guided by responsible sourcing, commercial transparency, professional due diligence, international compliance and long-term partnerships.</p>
-              <p class="items">Metal isotopes, copper products (copper cathodes and copper powder), industrial metals and mineral resources.</p>
-            </div>
-          </div>
-          <div class="row">
-            <h3>Agriculture</h3>
-            <div>
-              <p>Supporting global food supply chains across Africa, the Middle East, Europe and Asia, with reliable supply chains, quality coordination and commercial efficiency.</p>
-              <p class="items">Coffee, cocoa, rice, sugar, sesame, cashew nuts, corn, wheat, edible oils, animal feed products, fertilizers and urea.</p>
-            </div>
-          </div>
-          <div class="row">
-            <h3>Commercial representation</h3>
-            <p>Seller mandates, buyer representation, strategic sourcing, international trade facilitation, business development support and commercial introductions.</p>
-          </div>
-          <div class="row">
-            <h3>Sourcing and procurement</h3>
-            <p>Strategic supplier identification, international vendor selection, commercial negotiation support, RFQ coordination, contract coordination, documentation management, supplier due diligence and quality inspection coordination for mining, industrial manufacturing, construction, agriculture, infrastructure and government supply projects.</p>
-          </div>
-          <div class="row">
-            <h3>Logistics</h3>
-            <div>
-              <p>Ocean freight, container shipping, bulk cargo, project cargo, port operations, warehousing, customs coordination, cargo documentation and international transportation, with a focus on delivery reliability, cost optimization and supply chain visibility.</p>
-              <p class="items">Commercial terms: FOB, CIF, CFR, DAP, EXW, FCA and other Incoterms® as agreed between the parties.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="wrap trio">
-      <figure><div class="photo"><img src="assets/photos/metals-laboratory.jpg" width="900" height="600" alt="Research laboratory bench with a microscope and analytical equipment" loading="lazy" decoding="async"></div><h3>Metals and minerals</h3><p>Industrial metals and isotopes sourced with clarity across global supply routes.</p></figure>
-      <figure><div class="photo"><img src="assets/photos/logistics-port.jpg" width="900" height="600" alt="Container terminal with ships and cranes at dusk" loading="lazy" decoding="async"></div><h3>Logistics</h3><p>Shipping, ports and customs coordinated from sourcing to delivery.</p></figure>
-      <figure><div class="photo"><img src="assets/photos/agriculture-wheat.jpg" width="900" height="600" alt="Ripe wheat field" loading="lazy" decoding="async"></div><h3>Agriculture</h3><p>Agricultural supply lines supported by experience, timing and long-term stewardship.</p></figure>
-    </div>
-  </section>
-
-  <section id="products" aria-labelledby="products-title">
+  <section id="trading" class="tint" aria-labelledby="trading-title">
     <div class="wrap">
-      <h2 id="products-title" style="max-width:20ch">High-purity metals and isotopes.</h2>
-      <p class="lede">Ultrapure metals, powders and stable isotopes for industrial and research use. Select an element to see its specification. Availability is confirmed on request.</p>
+      <div class="head">
+        <div><span class="eyebrow">Trading</span><h2 id="trading-title">International trading <em>without borders.</em></h2></div>
+        <p class="lede">Through an established network of producers, exporters, manufacturers and commercial partners, we facilitate the sourcing and trading of strategic commodities with transparency, operational efficiency and long-term cooperation, across the Middle East, Africa, Europe, Asia and Latin America.</p>
+      </div>
+      <div class="tabs reveal">
+        <div class="tablist" role="tablist" aria-label="Trading activities" aria-orientation="vertical">
+          <button class="tab" role="tab" id="t-0" aria-controls="tp-0" aria-selected="true" type="button">Commodities and raw materials <i>01</i></button>
+          <button class="tab" role="tab" id="t-1" aria-controls="tp-1" aria-selected="false" tabindex="-1" type="button">Metals and minerals <i>02</i></button>
+          <button class="tab" role="tab" id="t-2" aria-controls="tp-2" aria-selected="false" tabindex="-1" type="button">Agriculture <i>03</i></button>
+          <button class="tab" role="tab" id="t-3" aria-controls="tp-3" aria-selected="false" tabindex="-1" type="button">Commercial representation <i>04</i></button>
+          <button class="tab" role="tab" id="t-4" aria-controls="tp-4" aria-selected="false" tabindex="-1" type="button">Sourcing and procurement <i>05</i></button>
+          <button class="tab" role="tab" id="t-5" aria-controls="tp-5" aria-selected="false" tabindex="-1" type="button">Logistics <i>06</i></button>
+        </div>
+        <div class="stage">
+          <div class="bg on"><img src="assets/photos/logistics-port.jpg" width="900" height="600" alt="" loading="lazy" decoding="async"></div>
+          <div class="bg"><img src="assets/photos/metals-laboratory.jpg" width="900" height="600" alt="" loading="lazy" decoding="async"></div>
+          <div class="bg"><img src="assets/photos/agriculture-wheat.jpg" width="900" height="600" alt="" loading="lazy" decoding="async"></div>
+          <div class="bg"><img src="assets/photos/company-business-bay.jpg" width="1200" height="900" alt="" loading="lazy" decoding="async"></div>
+          <div class="bg"><img src="assets/photos/solutions-burj-khalifa.jpg" width="1200" height="900" alt="" loading="lazy" decoding="async"></div>
+          <div class="bg"><img src="assets/photos/hero-port-dusk-poster.jpg" width="1920" height="732" alt="" loading="lazy" decoding="async"></div>
+          <div class="tabpanel" role="tabpanel" id="tp-0" aria-labelledby="t-0"><h3>Commodities and raw materials</h3><p>Reliable supply of industrial inputs, supported by supplier identification, commercial negotiation, contract coordination, logistics coordination, documentation management and transaction support.</p><p class="items">Sulfur granules · Industrial chemicals · Industrial raw materials</p></div>
+          <div class="tabpanel" role="tabpanel" id="tp-1" aria-labelledby="t-1" hidden><h3>Metals and minerals</h3><p>Industrial and base metals and mineral resources, guided by responsible sourcing, commercial transparency, professional due diligence, international compliance and long-term partnerships.</p><p class="items">Metal isotopes · Copper cathodes and powder · Industrial metals · Mineral resources</p></div>
+          <div class="tabpanel" role="tabpanel" id="tp-2" aria-labelledby="t-2" hidden><h3>Agriculture</h3><p>Supporting global food supply chains across Africa, the Middle East, Europe and Asia, with reliable supply chains, quality coordination and commercial efficiency.</p><p class="items">Coffee · Cocoa · Rice · Sugar · Sesame · Cashew nuts · Corn · Wheat · Edible oils · Animal feed products · Fertilizers · Urea</p></div>
+          <div class="tabpanel" role="tabpanel" id="tp-3" aria-labelledby="t-3" hidden><h3>Commercial representation</h3><p>Seller mandates, buyer representation, strategic sourcing, international trade facilitation, business development support and commercial introductions.</p></div>
+          <div class="tabpanel" role="tabpanel" id="tp-4" aria-labelledby="t-4" hidden><h3>Sourcing and procurement</h3><p>Strategic supplier identification, international vendor selection, commercial negotiation support, RFQ coordination, contract coordination, documentation management, supplier due diligence and quality inspection coordination for mining, industrial manufacturing, construction, agriculture, infrastructure and government supply projects.</p></div>
+          <div class="tabpanel" role="tabpanel" id="tp-5" aria-labelledby="t-5" hidden><h3>Logistics</h3><p>Ocean freight, container shipping, bulk cargo, project cargo, port operations, warehousing, customs coordination, cargo documentation and international transportation, with a focus on delivery reliability, cost optimization and supply chain visibility.</p><p class="items">FOB · CIF · CFR · DAP · EXW · FCA · other Incoterms® as agreed between the parties</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="tiles" role="group" aria-label="Elements" style="margin-top:32px">
+  <section id="products" class="dark" aria-labelledby="products-title">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Products</span><h2 id="products-title">High-purity metals and <em>isotopes.</em></h2></div>
+        <p class="lede">Ultrapure metals, powders and stable isotopes for industrial and research use. Select an element to see its specification. Availability is confirmed on request.</p>
+      </div>
+
+      <div class="tiles" role="group" aria-label="Elements">
         <button class="el" type="button" data-target="p-al" aria-controls="p-al" aria-pressed="false"><span class="z">13</span><span><span class="sym">Al</span><span class="nm">Aluminium</span><span class="ms">26.982</span></span></button>
         <button class="el" type="button" data-target="p-ni" aria-controls="p-ni" aria-pressed="false"><span class="z">28</span><span><span class="sym">Ni</span><span class="nm">Nickel</span><span class="ms">58.693</span></span></button>
         <button class="el" type="button" data-target="p-cu" aria-controls="p-cu" aria-pressed="true"><span class="z">29</span><span><span class="sym">Cu</span><span class="nm">Copper</span><span class="ms">63.546</span></span></button>
@@ -475,71 +540,79 @@ nav a{padding-block:8px}
         </div>
       </div>
 
-      <figure class="photo banner products-photo"><img src="assets/photos/products-silicon-wafer.jpg" width="1600" height="610" alt="Close-up of a silicon wafer with microchips" loading="lazy" decoding="async"></figure>
-
+      <figure class="photo products-photo reveal"><img src="assets/photos/products-silicon-wafer.jpg" width="1600" height="610" alt="Close-up of a silicon wafer with microchips" loading="lazy" decoding="async"></figure>
       <p class="terms">Products are delivered by road and by air to the recipient’s warehouse on CIP (Carriage and Insurance Paid to) terms, in the buyer’s customs area. Commercial terms are discussed on availability and confirmation of funds for the purchase.</p>
     </div>
   </section>
 
-  <section id="investments" class="alt" aria-labelledby="investments-title">
-    <div class="wrap split">
-      <div>
-        <h2 id="investments-title">Creating long-term investment value.</h2>
-        <p class="sub">We coordinate selected investment initiatives for private investors, corporations and institutional clients through a disciplined approach to opportunity identification, partner coordination and project development.</p>
-        <figure class="photo side"><img src="assets/photos/investments-dubai-skyline.jpg" width="1200" height="900" alt="Dubai skyline at sunset across the water" loading="lazy" decoding="async"></figure>
+  <section id="investments" aria-labelledby="investments-title">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Investments</span><h2 id="investments-title">Creating long-term <em>investment value.</em></h2></div>
+        <p class="lede">We coordinate selected investment initiatives for private investors, corporations and institutional clients through a disciplined approach to opportunity identification, partner coordination and project development.</p>
       </div>
-      <div class="stack">
-        <p class="big">A single gateway to international opportunities.</p>
-        <p>International investments often involve several disciplines, jurisdictions and advisors. Through our network we coordinate investment opportunities, corporate expansion, business establishment, strategic partnerships, joint ventures, market entry strategies, real estate projects, commercial development, procurement and project development.</p>
-        <p class="muted">Our clients benefit from one strategic contact, integrated coordination, an international network, tailored solutions, professional support and a long-term partnership.</p>
-        <div class="rows" style="margin-top:2em">
-          <div class="row"><h3>Investment areas</h3><p class="items" style="margin:0;color:var(--fg)">Real estate, renewable energy projects, infrastructure, industrial development, hospitality, technology, healthcare, manufacturing, agriculture and international joint ventures.</p></div>
-          <div class="row"><h3>Our approach</h3><p>Opportunity identification, preliminary assessment, strategic planning, partner coordination, project development and long-term monitoring.</p></div>
-          <div class="row"><h3>A strategic hub for global investors</h3><p>The UAE offers a strategic global location, world-class infrastructure, an international business environment, a modern regulatory framework, an innovation ecosystem and access to regional and global markets. Key sectors include real estate, renewable energy, logistics, industrial manufacturing, hospitality, healthcare, technology, artificial intelligence, food security and infrastructure.</p></div>
-          <div class="row"><h3>Real estate investment</h3><p>We coordinate access to selected luxury residential, commercial, office, hospitality, industrial, mixed-use, off-plan and income-producing property opportunities through reputable developers, licensed real estate professionals and specialized advisors. Services include investment assessment, project selection, developer coordination, negotiation support, documentation coordination and post-investment assistance through qualified partners.</p></div>
+      <div class="feature">
+        <figure class="photo reveal"><img src="assets/photos/investments-dubai-skyline.jpg" width="1200" height="900" alt="Dubai skyline at sunset across the water" loading="lazy" decoding="async"></figure>
+        <div class="card hero-card reveal" style="--d:.08s">
+          <span class="n">A SINGLE GATEWAY</span>
+          <h3 style="font-size:clamp(1.5rem,2.4vw,2.1rem)">One strategic contact for international opportunities.</h3>
+          <p>International investments often involve several disciplines, jurisdictions and advisors. Through our network we coordinate investment opportunities, corporate expansion, business establishment, strategic partnerships, joint ventures, market entry strategies, real estate projects, commercial development, procurement and project development.</p>
+          <p>Our clients benefit from integrated coordination, an international network, tailored solutions, professional support and a long-term partnership.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="solutions" aria-labelledby="solutions-title">
-    <div class="wrap split">
-      <div>
-        <h2 id="solutions-title">Strategic guidance for sustainable growth.</h2>
-        <p class="sub">We coordinate corporate advisory, business establishment and institutional processes through experienced qualified partners, helping clients manage complex international projects with clarity.</p>
-        <figure class="photo side"><img src="assets/photos/solutions-burj-khalifa.jpg" width="1200" height="900" alt="Burj Khalifa and modern architecture in Dubai" loading="lazy" decoding="async"></figure>
+      <div class="grid g3">
+        <div class="card reveal"><span class="n">AREAS</span><h3>Where we coordinate</h3><ul class="pills" style="padding:0"><li>Real estate</li><li>Renewable energy projects</li><li>Infrastructure</li><li>Industrial development</li><li>Hospitality</li><li>Technology</li><li>Healthcare</li><li>Manufacturing</li><li>Agriculture</li><li>Joint ventures</li></ul></div>
+        <div class="card reveal" style="--d:.08s"><span class="n">THE UAE</span><h3>A strategic hub for global investors</h3><p>A strategic global location, world-class infrastructure, an international business environment, a modern regulatory framework, an innovation ecosystem and access to regional and global markets. Key sectors include real estate, renewable energy, logistics, industrial manufacturing, hospitality, healthcare, technology, artificial intelligence, food security and infrastructure.</p></div>
+        <div class="card reveal" style="--d:.16s"><span class="n">REAL ESTATE</span><h3>Selected property opportunities</h3><p>Luxury residential, commercial, office, hospitality, industrial, mixed-use, off-plan and income-producing property, through reputable developers, licensed real estate professionals and specialized advisors, with investment assessment, project selection, developer coordination, negotiation support, documentation coordination and post-investment assistance through qualified partners.</p></div>
       </div>
-      <div class="rows">
-        <div class="row"><h3>Corporate advisory</h3><p>Corporate structuring, business expansion, international market entry, joint ventures, strategic alliances, corporate reorganization, investment planning, project structuring and growth strategies.</p></div>
-        <div class="row"><h3>Business setup</h3><p>Company formation, free zone and mainland companies, corporate structuring, business licensing, operational coordination, documentation, regulatory coordination and post-incorporation support through licensed professional partners, across trading, industrial activities, consultancy, technology, healthcare, construction, real estate and energy.</p></div>
-        <div class="row"><h3>Residency and investor solutions</h3><p>Investor residency, executive relocation, family sponsorship, administrative documentation, renewals and business relocation support are coordinated through qualified service providers in accordance with applicable regulations.</p></div>
-        <div class="row"><h3>Government and institutional relations</h3><p>Corporate documentation, administrative procedures, business licensing coordination, government liaison, regulatory coordination, corporate amendments and operational assistance, handled through qualified professionals.</p></div>
-        <div class="row"><h3>Compliance, governance and risk management</h3><p>Alba Cove supports international compliance standards: Know Your Customer (KYC) procedures, Anti-Money Laundering (AML) compliance, due diligence verification, risk assessment, corporate governance, confidentiality, data protection and ethical commercial practices across every coordinated project.</p></div>
+      <div class="reveal" style="margin-top:36px">
+        <span class="eyebrow">Our approach</span>
+        <div class="steps"><span>Opportunity identification</span><span>Preliminary assessment</span><span>Strategic planning</span><span>Partner coordination</span><span>Project development</span><span>Long-term monitoring</span></div>
       </div>
     </div>
   </section>
 
-  <section id="network" class="alt" aria-labelledby="network-title">
+  <section id="solutions" class="tint" aria-labelledby="solutions-title">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Solutions</span><h2 id="solutions-title">Strategic guidance for <em>sustainable growth.</em></h2></div>
+        <p class="lede">We coordinate corporate advisory, business establishment and institutional processes through experienced qualified partners, helping clients manage complex international projects with clarity.</p>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><span class="n">01</span><h3>Corporate advisory</h3><p>Corporate structuring, business expansion, international market entry, joint ventures, strategic alliances, corporate reorganization, investment planning, project structuring and growth strategies.</p></div>
+        <div class="card reveal" style="--d:.07s"><span class="n">02</span><h3>Business setup</h3><p>Company formation, free zone and mainland companies, business licensing, operational coordination, documentation, regulatory coordination and post-incorporation support through licensed professional partners, across trading, industrial activities, consultancy, technology, healthcare, construction, real estate and energy.</p></div>
+        <div class="card reveal" style="--d:.14s"><span class="n">03</span><h3>Residency and investor solutions</h3><p>Investor residency, executive relocation, family sponsorship, administrative documentation, renewals and business relocation support, coordinated through qualified service providers in accordance with applicable regulations.</p></div>
+        <div class="card reveal"><span class="n">04</span><h3>Government and institutional relations</h3><p>Corporate documentation, administrative procedures, business licensing coordination, government liaison, regulatory coordination, corporate amendments and operational assistance, handled through qualified professionals.</p></div>
+        <div class="card reveal" style="--d:.07s;grid-column:span 2"><span class="n">05</span><h3>Compliance, governance and risk management</h3><p>Alba Cove supports international compliance standards: Know Your Customer (KYC) procedures, Anti-Money Laundering (AML) compliance, due diligence verification, risk assessment, corporate governance, confidentiality, data protection and ethical commercial practices across every coordinated project.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="network" class="dark" aria-labelledby="network-title">
     <div class="wrap">
       <div class="split">
-        <div>
-          <h2 id="network-title">Connecting businesses across international markets.</h2>
-          <figure class="photo side"><img src="assets/photos/network-desert-dunes.jpg" width="1200" height="900" alt="Desert dunes in the United Arab Emirates" loading="lazy" decoding="async"></figure>
+        <div class="sticky">
+          <span class="eyebrow">Network</span>
+          <h2 id="network-title">Connecting businesses across <em>international markets.</em></h2>
+          <figure class="photo reveal" style="margin-top:32px;aspect-ratio:4/3"><img src="assets/photos/network-desert-dunes.jpg" width="1200" height="900" alt="Desert dunes in the United Arab Emirates" loading="lazy" decoding="async"></figure>
         </div>
-        <div class="stack">
-          <p class="big">Partners, advisors, logistics providers, developers and institutions in one network.</p>
-          <p>Alba Cove operates through a network of international partners, suppliers, logistics operators and commercial intermediaries, supporting cross-border transactions with operational coordination and compliance procedures.</p>
-          <p class="muted">The network includes trading companies, mining companies, commodity producers, logistics operators, shipping companies, real estate developers, law firms, tax advisors, audit firms, government authorities and free zones.</p>
-          <p>We build commercial relationships in the United Arab Emirates and the GCC countries, West Africa, East Africa, Europe and Asia, and we serve clients, suppliers and partners across the Middle East, Africa, Europe, Asia, North America and Latin America.</p>
-          <div class="rows" style="margin-top:2em">
-            <div class="row"><h3>Why Alba Cove</h3><p>A strategic international perspective, UAE market expertise, an integrated business platform, a trusted professional network, tailored solutions, long-term relationships and high professional standards.</p></div>
-            <div class="row"><h3>Objectives</h3><p>To expand international trading partnerships, strengthen global supplier networks, develop long-term commodity supply relationships, increase our presence in emerging markets and build sustainable commercial collaborations worldwide.</p></div>
-            <div class="row"><h3>Looking ahead</h3><p>We continue to strengthen our position in international markets by expanding strategic partnerships, enhancing operational capabilities and developing sustainable trade opportunities across emerging economies.</p></div>
+        <div class="prose">
+          <p class="big reveal" style="color:var(--on-dark)">Partners, advisors, logistics providers, developers and institutions in one network.</p>
+          <p class="reveal" style="color:var(--on-dark-muted)">Alba Cove operates through a network of international partners, suppliers, logistics operators and commercial intermediaries, supporting cross-border transactions with operational coordination and compliance procedures.</p>
+          <div class="reveal"><span class="eyebrow">Our network includes</span>
+            <ul class="pills" style="padding:0"><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Trading companies</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Mining companies</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Commodity producers</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Logistics operators</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Shipping companies</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Real estate developers</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Law firms</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Tax advisors</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Audit firms</li><li style="background:var(--ink-2);border-color:var(--dark-line);color:var(--on-dark)">Government authorities and free zones</li></ul>
+          </div>
+          <p class="reveal" style="color:var(--on-dark-muted)">We build commercial relationships in the United Arab Emirates and the GCC countries, West Africa, East Africa, Europe and Asia, and we serve clients, suppliers and partners across the Middle East, Africa, Europe, Asia, North America and Latin America.</p>
+          <div class="grid g3" style="margin-top:28px">
+            <div class="card reveal"><span class="n">WHY ALBA COVE</span><p style="margin-top:0">A strategic international perspective, UAE market expertise, an integrated business platform, a trusted professional network, tailored solutions, long-term relationships and high professional standards.</p></div>
+            <div class="card reveal" style="--d:.07s"><span class="n">OBJECTIVES</span><p style="margin-top:0">To expand international trading partnerships, strengthen global supplier networks, develop long-term commodity supply relationships, increase our presence in emerging markets and build sustainable collaborations worldwide.</p></div>
+            <div class="card reveal" style="--d:.14s"><span class="n">LOOKING AHEAD</span><p style="margin-top:0">We continue to strengthen our position by expanding strategic partnerships, enhancing operational capabilities and developing sustainable trade opportunities across emerging economies.</p></div>
           </div>
         </div>
       </div>
-      <h3 style="margin-top:clamp(48px,7vw,80px)">How a project moves with Alba Cove</h3>
-      <ol class="journey">
+
+      <h3 style="margin-top:clamp(64px,9vw,120px);font:600 clamp(1.6rem,3vw,2.4rem)/1.1 var(--f-text);letter-spacing:-.03em">How a project moves with Alba Cove</h3>
+      <ol class="timeline" id="timeline">
         <li>Understanding objectives<small>Listening carefully to each client’s vision.</small></li>
         <li>Strategic assessment<small>Evaluating opportunities and identifying the most effective approach.</small></li>
         <li>Business structuring<small>Designing a customized commercial or investment strategy.</small></li>
@@ -551,12 +624,12 @@ nav a{padding-block:8px}
   </section>
 </main>
 
-<div class="band" id="contact" role="region" aria-labelledby="contact-title">
+<div class="dark" id="contact" role="region" aria-labelledby="contact-title" style="border-top:1px solid var(--dark-line)">
   <div class="wrap">
-    <div class="contact">
-      <h2 id="contact-title">Let’s build your next international opportunity.</h2>
-      <p class="intro">Whether your objective is international trade, strategic investment, corporate expansion or business development, Alba Cove is committed to providing professional coordination, international expertise and trusted partnerships that support sustainable growth.</p>
-      <figure class="photo contact-photo"><img src="assets/photos/contact-dubai-creek.jpg" width="1450" height="483" alt="Traditional boats on Dubai Creek at sunset" loading="lazy" decoding="async"></figure>
+    <div class="contact" style="padding-block:clamp(72px,10vw,140px) 0">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-title">Let’s build your next international <em>opportunity.</em></h2>
+      <p class="lede">Whether your objective is international trade, strategic investment, corporate expansion or business development, Alba Cove is committed to providing professional coordination, international expertise and trusted partnerships that support sustainable growth.</p>
       <a class="mail" id="mail" href="mailto:info@albacovetrading.com">info@albacovetrading.com</a>
       <dl class="details">
         <div><dt>Head office</dt><dd>Building A1, Dubai Digital Park<br>Dubai Silicon Oasis, Dubai<br>United Arab Emirates</dd></div>
@@ -564,6 +637,7 @@ nav a{padding-block:8px}
         <div><dt>Email address</dt><dd><button class="copy" type="button" aria-live="polite" data-copy="mail" id="copy-mail" style="margin-left:0">Copy email</button></dd></div>
         <div><dt>License</dt><dd>62515, Dubai Silicon Oasis</dd></div>
       </dl>
+      <figure class="photo contact-photo reveal"><img src="assets/photos/contact-dubai-creek.jpg" width="1450" height="483" alt="Traditional boats on Dubai Creek at sunset" loading="lazy" decoding="async"></figure>
       <p class="legal"><strong>Important information.</strong> This corporate profile is for informational and presentation purposes only. It does not constitute an offer, solicitation, recommendation or legal opinion. Alba Cove Trading FZCO operates as an international trading, business development and project coordination company and is not a law firm or public authority. Regulated legal, tax, audit and regulatory services are provided exclusively by appropriately licensed and qualified independent professionals or authorized institutions where required. All transactions remain subject to formal agreements, due diligence procedures, compliance verification, applicable laws and mutually accepted contractual terms.</p>
       <div class="legal" id="privacy">
         <p><strong>Privacy and cookies.</strong> This website does not use cookies, analytics, advertising or tracking tools, and it does not load fonts, scripts or media from third-party services. It has no forms and does not collect personal data directly.</p>
@@ -582,37 +656,103 @@ nav a{padding-block:8px}
 <script>
 (function(){
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var heroVideo=document.querySelector('.hero-photo video');
-  if(reduce&&heroVideo){heroVideo.removeAttribute('autoplay');heroVideo.pause()}
-  var panels=document.querySelectorAll('.panel');
-  var buttons=document.querySelectorAll('[data-target]');
-  function select(id,scroll){
-    panels.forEach(function(p){p.hidden=(p.id!==id)});
-    buttons.forEach(function(b){
-      if(b.hasAttribute('aria-pressed')){b.setAttribute('aria-pressed',b.dataset.target===id?'true':'false')}
-    });
-    if(scroll){
-      var el=document.getElementById('products');
-      if(el){el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}
-    }
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* hero video: stop for reduced motion */
+  var hv=$('.hero video');
+  if(reduce&&hv){hv.removeAttribute('autoplay');hv.pause()}
+
+  /* header state, scroll progress, hero parallax */
+  var nav=$('#nav'), bar=$('#bar'), ticking=false;
+  function onScroll(){
+    var y=window.pageYOffset||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    nav.classList.toggle('scrolled',y>40);
+    bar.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')';
+    if(!reduce&&hv&&y<window.innerHeight){hv.style.transform='scale(1.04) translateY('+(y*0.12)+'px)'}
+    ticking=false;
   }
-  buttons.forEach(function(b){
-    b.addEventListener('click',function(){select(b.dataset.target,!b.hasAttribute('aria-pressed'))});
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+  onScroll();
+
+  /* mobile menu */
+  var burger=$('#burger'), menu=$('#menu');
+  function closeMenu(){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false')});
+  $$('a',menu).forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+
+  /* active section in menu */
+  var links=$$('.menu a[href^="#"]:not(.cta)');
+  var secs=links.map(function(a){return $(a.getAttribute('href'))}).filter(Boolean);
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){so.observe(s)});
+
+    /* reveal on scroll */
+    var ro=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}});
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    $$('.reveal').forEach(function(el){ro.observe(el)});
+  }else{$$('.reveal').forEach(function(el){el.classList.add('in')})}
+
+  /* tabs */
+  var tabs=$$('.tab'), bgs=$$('.stage .bg'), panes=$$('.tabpanel');
+  function pick(i,focus){
+    tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');t.tabIndex=k===i?0:-1});
+    panes.forEach(function(p,k){p.hidden=k!==i});
+    bgs.forEach(function(b,k){b.classList.toggle('on',k===i)});
+    if(focus)tabs[i].focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){pick(i)});
+    t.addEventListener('keydown',function(e){
+      var n=tabs.length,k=null;
+      if(e.key==='ArrowDown'||e.key==='ArrowRight')k=(i+1)%n;
+      else if(e.key==='ArrowUp'||e.key==='ArrowLeft')k=(i-1+n)%n;
+      else if(e.key==='Home')k=0;else if(e.key==='End')k=n-1;
+      if(k!==null){e.preventDefault();pick(k,true)}
+    });
   });
-  document.querySelectorAll('.copy').forEach(function(btn){
+
+  /* element tiles */
+  var panels=$$('.panel'), tiles=$$('.el[aria-pressed]');
+  tiles.forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.dataset.target;
+      panels.forEach(function(p){p.hidden=(p.id!==id)});
+      tiles.forEach(function(t){t.setAttribute('aria-pressed',t.dataset.target===id?'true':'false')});
+    });
+  });
+
+  /* journey line fills while scrolling */
+  var tl=$('#timeline'), steps=tl?$$('li',tl):[];
+  function journey(){
+    if(!tl)return;
+    var r=tl.getBoundingClientRect(), vh=window.innerHeight;
+    var p=Math.max(0,Math.min(1,(vh*0.8-r.top)/(Math.max(r.height,1)+vh*0.25)));
+    if(reduce)p=1;
+    tl.style.setProperty('--p',p.toFixed(3));
+    steps.forEach(function(li,i){li.classList.toggle('on',p>=(i/(steps.length))+0.04)});
+  }
+  window.addEventListener('scroll',journey,{passive:true});window.addEventListener('resize',journey);journey();
+
+  /* copy buttons */
+  $$('.copy').forEach(function(btn){
     btn.addEventListener('click',function(){
       var el=document.getElementById(btn.dataset.copy);
-      var text=el.textContent.trim();
-      var label=btn.textContent;
+      var text=el.textContent.trim(), label=btn.textContent;
       var reset=function(){setTimeout(function(){btn.textContent=label},1600)};
       var fallback=function(){
         var r=document.createRange();r.selectNodeContents(el);
         var s=window.getSelection();s.removeAllRanges();s.addRange(r);
         btn.textContent='Selected';reset();
       };
-      try{
-        navigator.clipboard.writeText(text).then(function(){btn.textContent='Copied';reset()},fallback);
-      }catch(e){fallback()}
+      try{navigator.clipboard.writeText(text).then(function(){btn.textContent='Copied';reset()},fallback)}catch(e){fallback()}
     });
   });
 })();
