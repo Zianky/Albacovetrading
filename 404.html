@@ -17,7 +17,10 @@
   </style>
   <script>
     (function () {
-      var path = window.location.pathname.replace(/\\/+$/, "").toLowerCase() || "/";
+      var path = window.location.pathname.toLowerCase();
+      while (path.length > 1 && path.charAt(path.length - 1) === "/") {
+        path = path.slice(0, -1);
+      }
       var routes = {
         "/trading": "/#trading",
         "/products": "/#products",
