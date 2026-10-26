@@ -1,65 +1,50 @@
 # Alba Cove Trading – sito web
 
-Sito aziendale di **Alba Cove Trading FZCO** (Dubai): una pagina statica in HTML/CSS/JS, senza build e senza dipendenze da installare.
+Sito aziendale di **Alba Cove Trading FZCO** (Dubai): una pagina statica in HTML/CSS/JS, senza build e senza dipendenze da installare. Online su https://www.albacovetrading.com (GitHub Pages, ramo `main`, cartella root).
 
-## Contenuto del progetto
+## Contenuto del repository
 
 | File | Funzione |
 | --- | --- |
-| `index.html` | Il sito completo: Company, Trading, Products, Investments, Solutions, Network, Contact |
-| `assets/logo-mark.png` | Simbolo (cerchio con la A), verde, sfondo trasparente |
-| `assets/logo-full-teal.png` | Logo completo, verde, sfondo trasparente |
-| `assets/logo-full-white.png` | Logo completo, bianco, per sfondi scuri (footer) |
+| `index.html` | Il sito completo: Company, Trading, Products, Investments, Solutions, Network, Contact, informativa privacy e crediti |
+| `404.html` | Pagina di errore, con reindirizzamento dei vecchi percorsi alla sezione giusta della home |
+| `company/`, `about/`, `trading/`, `products/`, `investments/`, `solutions/`, `network/`, `contact/` | Pagine di rimando dai vecchi indirizzi alla sezione corrispondente della home (`noindex`, canonical alla home) |
+| `robots.txt`, `sitemap.xml` | Indicizzazione: aggiornare `lastmod` quando cambiano i contenuti |
+| `CNAME` | Dominio personalizzato `www.albacovetrading.com` |
 | `.nojekyll` | Disattiva Jekyll: il sito viene servito così com'è |
+| `assets/logo-*.png` | Logo: simbolo (verde), logo completo (verde e bianco) |
+| `assets/og-image.jpg` | Anteprima per social e messaggistica (1200×630): logo bianco su fotogramma del porto |
+| `assets/photos/` | Foto del sito (JPEG già ritagliati e compressi) |
+| `assets/video/` | Video dell'hero (MP4 e WebM) |
 
-## Sito online (GitHub Pages)
+## Foto e video
 
-Indirizzo di prova: https://zianky.github.io/Albacovetrading/
-
-In **Settings → Pages**: sorgente "Deploy from a branch", ramo `main`, cartella `/ (root)`.
-
-## Foto
-
-Le foto sono salvate in `assets/photos/` (JPEG già ritagliati e compressi) e il sito non dipende più da servizi esterni. Provengono da Unsplash, che consente l'uso commerciale senza obbligo di citare l'autore.
+Il sito non dipende da servizi esterni. Foto da Unsplash (licenza Unsplash, uso commerciale consentito, citazione non obbligatoria ma riportata nel footer; nessuna immagine Unsplash+). Video e ritagli del video da Pexels.
 
 | File | Sezione | Autore |
 | --- | --- | --- |
-| `hero-port-dusk-poster.jpg` | Hero, immagine iniziale del video (primo fotogramma) | willy one (Pexels) |
-| `company-business-bay.jpg` | Company | Mohamed Reshad |
+| `hero-port-dusk-poster.jpg` | Hero (immagine iniziale del video), Trading, Products | willy one (Pexels) |
+| `logistics-port.jpg` | Trading, Products (ritaglio del video) | willy one (Pexels) |
+| `company-business-bay.jpg` | Company, Trading | Mohamed Reshad |
 | `metals-laboratory.jpg` | Trading, Metals and minerals | Trnava University |
-| `logistics-port.jpg` | Trading, Logistics (ritaglio del fotogramma del video hero) | dal video Pexels |
 | `agriculture-wheat.jpg` | Trading, Agriculture | Edson Rosas |
-| `products-silicon-wafer.jpg` | Products | Laura Ockel |
 | `investments-dubai-skyline.jpg` | Investments | Ahmed Galal |
-| `solutions-burj-khalifa.jpg` | Solutions | Wael Hneini |
+| `solutions-burj-khalifa.jpg` | Trading (schede) | Wael Hneini |
 | `network-desert-dunes.jpg` | Network | Faris Mohammed |
 | `contact-dubai-creek.jpg` | Contact | Hatem Ramadan |
 
-Per cambiare una foto, sostituisci il file mantenendo lo stesso nome e le stesse proporzioni (hero e Products 21:8, Contact 3:1, Company, Investments, Solutions e Network 4:3, Trading 3:2).
+Per cambiare una foto, sostituisci il file mantenendo lo stesso nome e le stesse proporzioni. Se aggiungi una foto, aggiungi anche l'autore nel blocco «Credits and copyright» di `index.html`.
 
-## Video dell'hero
+`assets/video/hero-port-dusk.mp4` è un loop di 12,5 secondi, senza audio, 1920×732, circa 2,4 MB; `hero-port-dusk.webm` è la copia per i browser senza H.264. Parte da solo e in silenzio, e si ferma per chi ha attivato la riduzione del movimento. Per sostituirlo: stessi nomi file, H.264 senza audio, sotto i 3 MB, e rigenera WebM, il poster e `og-image.jpg`.
 
-`assets/video/hero-port-dusk.mp4` è un loop di 12,5 secondi, senza audio, 1920×732 (proporzioni 21:8), circa 2,4 MB. `hero-port-dusk.webm` (3,2 MB) è la versione di riserva per i browser senza H.264. Parte da solo, in silenzio, e si ferma per chi ha attivato la riduzione del movimento nel dispositivo. Il video originale è di willy one su Pexels (licenza gratuita, citazione non obbligatoria).
+## Privacy
 
-Per sostituirlo: tieni gli stessi nomi file, usa H.264 senza audio e sotto i 3 MB, e rigenera anche il file WebM e `assets/photos/hero-port-dusk-poster.jpg` dal primo fotogramma.
+Il sito non imposta cookie, non ha moduli, analisi o pubblicità e non fa richieste a servizi esterni (font di sistema). I link a Instagram, Facebook e LinkedIn sono normali link esterni. L'informativa è nel blocco `#privacy` di `index.html` e va fatta rivedere da un consulente legale. GitHub Pages può registrare l'indirizzo IP dei visitatori nei suoi log di sicurezza, e l'informativa lo dichiara.
 
-## Licenze e diritti d'autore
+## Dominio e DNS
 
-- Foto: Unsplash (licenza Unsplash, uso commerciale consentito, citazione non obbligatoria ma riportata nel footer). Non sono usate immagini Unsplash+.
-- Video e ritagli del video: Pexels (licenza Pexels, uso commerciale consentito, nessuna citazione obbligatoria).
-- Font: nessun file di font incluso, il sito usa i font di sistema del dispositivo.
-- Testi, logo e grafica: proprietà di Alba Cove Trading FZCO.
-- Sezione privacy e cookie: testo in `index.html` (blocco `#privacy`), da far rivedere a un consulente legale.
-
-## Collegare il dominio www.albacovetrading.com
-
-1. Aggiungi nella radice del repository un file `CNAME` che contenga una sola riga: `www.albacovetrading.com`.
-2. Nel DNS del dominio crea un record **CNAME** `www` che punta a `zianky.github.io`.
-3. In **Settings → Pages** inserisci il dominio in "Custom domain" e attiva **Enforce HTTPS** quando il certificato è pronto.
-
-Finché il DNS punta al vecchio sito, il dominio continua a mostrare quello.
+DNS gestito dal pannello Webador: record CNAME `www` verso `zianky.github.io` e quattro record A su `@` verso 185.199.108.153, 185.199.109.153, 185.199.110.153 e 185.199.111.153. Il dominio personalizzato è impostato in **Settings → Pages**; attiva **Enforce HTTPS** quando il certificato è pronto.
 
 ## Modifiche
 
-Testi, colori e font sono in `index.html`; colori e font sono definiti all'inizio del file, nel blocco `:root`.
-Prima di pubblicare in modo definitivo, aggiungi in Products la misura del filo di nichel (riga rimossa in attesa di conferma).
+Testi, colori e dati strutturati sono in `index.html`; i colori sono definiti all'inizio del file, nel blocco `:root`. Dopo ogni modifica pubblicata, aggiorna `lastmod` in `sitemap.xml`. Contatti ufficiali: info@albacovetrading.com, +971 58 550 9345, licenza 62515.
